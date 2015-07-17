@@ -1,0 +1,937 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2005/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <DataSources>
+    <DataSource Name="CREDITSOFT">
+      <rd:DataSourceID>bbebd0a0-7453-4648-a3f7-4957c3671d4d</rd:DataSourceID>
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString>Data Source=CSOFT;Initial Catalog=CSDATA8</ConnectString>
+        <IntegratedSecurity>true</IntegratedSecurity>
+      </ConnectionProperties>
+    </DataSource>
+  </DataSources>
+  <InteractiveHeight>11in</InteractiveHeight>
+  <Description>Pulls Client Statements by ClientID rather than CheckRun</Description>
+  <ReportParameters>
+    <ReportParameter Name="ClientID">
+      <DataType>Integer</DataType>
+      <Prompt>ClientID</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="NoLock">
+      <DataType>Boolean</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>False</Value>
+        </Values>
+      </DefaultValue>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>NoLock</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="BaseURL">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>BaseURL</Prompt>
+    </ReportParameter>
+  </ReportParameters>
+  <rd:DrawGrid>true</rd:DrawGrid>
+  <InteractiveWidth>8.5in</InteractiveWidth>
+  <rd:SnapToGrid>true</rd:SnapToGrid>
+  <RightMargin>0.2in</RightMargin>
+  <LeftMargin>0.2in</LeftMargin>
+  <BottomMargin>0.25in</BottomMargin>
+  <rd:ReportID>c3bbeef0-608a-442d-9a8f-c24b4847ffa9</rd:ReportID>
+  <DataSets>
+    <DataSet Name="Header">
+      <Fields>
+        <Field Name="CompanyName">
+          <DataField>CompanyName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Address1">
+          <DataField>Address1</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Address2">
+          <DataField>Address2</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="City">
+          <DataField>City</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="State">
+          <DataField>State</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Zip">
+          <DataField>Zip</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="PayTo">
+          <DataField>PayTo</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="StatementNote3">
+          <DataField>StatementNote3</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ClientPhoneNumber">
+          <DataField>ClientPhoneNumber</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ClientFaxNumber">
+          <DataField>ClientFaxNumber</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>CREDITSOFT</DataSourceName>
+        <CommandText>if @NoLock = 1
+					begin
+					set transaction isolation level read uncommitted
+					end
+
+					SELECT 	CompanyName, Address1, Address2, City, State, Zip, (Select chardata from preferences where preference = 'PayTo') as PayTo,
+					StatementNote3, ClientPhoneNumber, ClientFaxNumber
+					FROM SystemTable</CommandText>
+        <QueryParameters>
+          <QueryParameter Name="@NoLock">
+            <Value>=Parameters!NoLock.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+      </Query>
+    </DataSet>
+    <DataSet Name="ClientInfo">
+      <Fields>
+        <Field Name="ClientID">
+          <DataField>cid</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="ClientLastName">
+          <DataField>clname</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ClientFirstName">
+          <DataField>cfname</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CoAppLastName">
+          <DataField>colname</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CoAppFirstName">
+          <DataField>cofname</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ClientAddress1">
+          <DataField>caddress1</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ClientAddress2">
+          <DataField>caddress2</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ClientCity">
+          <DataField>ccity</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ClientState">
+          <DataField>cstate</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ClientZip">
+          <DataField>czip</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>CREDITSOFT</DataSourceName>
+        <CommandText>if @NoLock = 1
+					begin
+					set transaction isolation level read uncommitted
+					end
+
+					SELECT c.ClientID AS cid, c.LastName AS clname, c.FirstName AS cfname, co.CoAppLast AS colname, co.CoAppFirst AS cofname, c.Address1 AS caddress1, c.Address2 AS caddress2, c.City AS ccity, c.State AS cstate, c.Zip AS czip
+					FROM Clients AS c
+					LEFT OUTER JOIN CoApps AS co
+					ON c.ClientID = co.ClientID
+					WHERE c.ClientID=@ClientID</CommandText>
+        <QueryParameters>
+          <QueryParameter Name="@NoLock">
+            <Value>=Parameters!NoLock.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@ClientID">
+            <Value>=Parameters!ClientID.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+      </Query>
+    </DataSet>
+    <DataSet Name="Statements">
+      <Fields>
+        <Field Name="rowid">
+          <DataField>rowid</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="clientid">
+          <DataField>clientid</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="creditorid">
+          <DataField>creditorid</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="clientcred">
+          <DataField>clientcred</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="name_creditor">
+          <DataField>name_creditor</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="postdate">
+          <DataField>postdate</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="description">
+          <DataField>description</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="pmt">
+          <DataField>pmt</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="credit">
+          <DataField>credit</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="debits">
+          <DataField>debits</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="sortorder">
+          <DataField>sortorder</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="batch">
+          <DataField>batch</DataField>
+          <rd:TypeName>System.Int64</rd:TypeName>
+        </Field>
+        <Field Name="summarydescription">
+          <DataField>summarydescription</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="nsf">
+          <DataField>nsf</DataField>
+          <rd:TypeName>System.Boolean</rd:TypeName>
+        </Field>
+        <Field Name="starting_balance">
+          <DataField>starting_balance</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>CREDITSOFT</DataSourceName>
+        <CommandText>if @NoLock = 1
+					begin
+					set transaction isolation level read uncommitted
+					end
+
+					EXEC Custom_DebitsCredits @ClientID</CommandText>
+        <QueryParameters>
+          <QueryParameter Name="@NoLock">
+            <Value>=Parameters!NoLock.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@ClientID">
+            <Value>=Parameters!ClientID.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+      </Query>
+    </DataSet>
+    <DataSet Name="DueDate">
+      <Fields>
+        <Field Name="datedue">
+          <DataField>PaymentDueDate</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>CREDITSOFT</DataSourceName>
+        <CommandText>if @NoLock = 1
+					begin
+					set transaction isolation level read uncommitted
+					end
+
+					SELECT dbo.Custom_ClientNextPaymentDue(@ClientID) AS PaymentDueDate</CommandText>
+        <QueryParameters>
+          <QueryParameter Name="@NoLock">
+            <Value>=Parameters!NoLock.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@ClientID">
+            <Value>=Parameters!ClientID.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+      </Query>
+    </DataSet>
+    <DataSet Name="AccumulatedFunds">
+      <Fields>
+        <Field Name="AccumulatedFunds">
+          <DataField>AccumulatedFunds</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>CREDITSOFT</DataSourceName>
+        <CommandText>EXEC Custom_ClientAccumulatedFunds @ClientID</CommandText>
+        <QueryParameters>
+          <QueryParameter Name="@ClientID">
+            <Value>=Parameters!ClientID.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+      </Query>
+    </DataSet>
+  </DataSets>
+  <Code />
+  <Width>8.00983in</Width>
+  <Body>
+    <ReportItems>
+      <List Name="AccumulatedFundsList">
+        <ZIndex>5</ZIndex>
+        <Left>0.125in</Left>
+        <DataSetName>AccumulatedFunds</DataSetName>
+        <ReportItems>
+          <Textbox Name="textbox3">
+            <rd:DefaultName>textbox3</rd:DefaultName>
+            <Style>
+              <FontSize>8pt</FontSize>
+              <FontWeight>700</FontWeight>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+            <CanGrow>true</CanGrow>
+            <Left>5.625in</Left>
+            <Value>="Accumulated Funds: $" &amp; Fields!AccumulatedFunds.Value</Value>
+          </Textbox>
+        </ReportItems>
+        <Top>4.375in</Top>
+        <Width>7.75in</Width>
+        <Style>
+          <BackgroundColor>LightSteelBlue</BackgroundColor>
+        </Style>
+        <Height>0.25in</Height>
+      </List>
+      <Table Name="table1">
+        <ZIndex>4</ZIndex>
+        <DataSetName>Statements</DataSetName>
+        <KeepTogether>true</KeepTogether>
+        <Top>3.625in</Top>
+        <TableGroups>
+          <TableGroup>
+            <Grouping Name="table1_Group1">
+              <GroupExpressions>
+                <GroupExpression>=Fields!postdate.Value</GroupExpression>
+                <GroupExpression>=Fields!batch.Value</GroupExpression>
+                <GroupExpression>=Fields!summarydescription.Value</GroupExpression>
+              </GroupExpressions>
+            </Grouping>
+            <Header>
+              <TableRows>
+                <TableRow>
+                  <TableCells>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox46">
+                          <rd:DefaultName>textbox46</rd:DefaultName>
+                          <Style>
+                            <Color>DarkBlue</Color>
+                            <BorderColor>
+                              <Top>LightSteelBlue</Top>
+                            </BorderColor>
+                            <BorderStyle>
+                              <Top>Solid</Top>
+                            </BorderStyle>
+                            <BorderWidth>
+                              <Top>1pt</Top>
+                            </BorderWidth>
+                            <Format>d</Format>
+                            <TextAlign>Right</TextAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                          <ZIndex>5</ZIndex>
+                          <CanGrow>true</CanGrow>
+                          <Value>=Fields!postdate.Value</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox47">
+                          <rd:DefaultName>textbox47</rd:DefaultName>
+                          <Style>
+                            <Color>DarkBlue</Color>
+                            <BorderColor>
+                              <Top>LightSteelBlue</Top>
+                            </BorderColor>
+                            <BorderStyle>
+                              <Top>Solid</Top>
+                            </BorderStyle>
+                            <BorderWidth>
+                              <Top>1pt</Top>
+                            </BorderWidth>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                          <ZIndex>4</ZIndex>
+                          <CanGrow>true</CanGrow>
+                          <Value />
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox48">
+                          <rd:DefaultName>textbox48</rd:DefaultName>
+                          <Style>
+                            <Color>DarkBlue</Color>
+                            <BorderColor>
+                              <Top>LightSteelBlue</Top>
+                            </BorderColor>
+                            <BorderStyle>
+                              <Top>Solid</Top>
+                            </BorderStyle>
+                            <BorderWidth>
+                              <Top>1pt</Top>
+                            </BorderWidth>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                          <ZIndex>3</ZIndex>
+                          <CanGrow>true</CanGrow>
+                          <Value>=Fields!description.Value</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox49">
+                          <rd:DefaultName>textbox49</rd:DefaultName>
+                          <Style>
+                            <Color>DarkBlue</Color>
+                            <BorderColor>
+                              <Top>LightSteelBlue</Top>
+                            </BorderColor>
+                            <BorderStyle>
+                              <Top>Solid</Top>
+                            </BorderStyle>
+                            <BorderWidth>
+                              <Top>1pt</Top>
+                            </BorderWidth>
+                            <Format>c</Format>
+                            <TextAlign>Right</TextAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                          <ZIndex>2</ZIndex>
+                          <CanGrow>true</CanGrow>
+                          <Value>=sum( Fields!credit.Value)</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox50">
+                          <rd:DefaultName>textbox50</rd:DefaultName>
+                          <Style>
+                            <Color>DarkBlue</Color>
+                            <BorderColor>
+                              <Top>LightSteelBlue</Top>
+                            </BorderColor>
+                            <BorderStyle>
+                              <Top>Solid</Top>
+                            </BorderStyle>
+                            <BorderWidth>
+                              <Top>1pt</Top>
+                            </BorderWidth>
+                            <Format>c</Format>
+                            <TextAlign>Right</TextAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                          <ZIndex>1</ZIndex>
+                          <CanGrow>true</CanGrow>
+                          <Value>=sum( -Fields!debits.Value)</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox51">
+                          <rd:DefaultName>textbox51</rd:DefaultName>
+                          <Style>
+                            <Color>DarkBlue</Color>
+                            <BorderColor>
+                              <Top>LightSteelBlue</Top>
+                            </BorderColor>
+                            <BorderStyle>
+                              <Top>Solid</Top>
+                            </BorderStyle>
+                            <BorderWidth>
+                              <Top>1pt</Top>
+                            </BorderWidth>
+                            <Format>c</Format>
+                            <TextAlign>Right</TextAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <Value>=Fields!starting_balance.Value + (runningvalue(Fields!credit.Value - Fields!debits.Value, sum, nothing))</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                  </TableCells>
+                  <Height>0.25in</Height>
+                </TableRow>
+              </TableRows>
+            </Header>
+          </TableGroup>
+        </TableGroups>
+        <Width>7.75in</Width>
+        <Header>
+          <TableRows>
+            <TableRow>
+              <TableCells>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox57">
+                      <rd:DefaultName>textbox57</rd:DefaultName>
+                      <Style>
+                        <BackgroundColor>LightSteelBlue</BackgroundColor>
+                        <FontSize>9pt</FontSize>
+                        <FontWeight>700</FontWeight>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>11</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>Entry Date</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox58">
+                      <rd:DefaultName>textbox58</rd:DefaultName>
+                      <Style>
+                        <BackgroundColor>LightSteelBlue</BackgroundColor>
+                        <FontSize>9pt</FontSize>
+                        <FontWeight>700</FontWeight>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>10</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>Creditor</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox59">
+                      <rd:DefaultName>textbox59</rd:DefaultName>
+                      <Style>
+                        <BackgroundColor>LightSteelBlue</BackgroundColor>
+                        <FontSize>9pt</FontSize>
+                        <FontWeight>700</FontWeight>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>9</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>Entry Description</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox60">
+                      <rd:DefaultName>textbox60</rd:DefaultName>
+                      <Style>
+                        <BackgroundColor>LightSteelBlue</BackgroundColor>
+                        <FontSize>9pt</FontSize>
+                        <FontWeight>700</FontWeight>
+                        <TextAlign>Center</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>8</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>Credits</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox61">
+                      <rd:DefaultName>textbox61</rd:DefaultName>
+                      <Style>
+                        <BackgroundColor>LightSteelBlue</BackgroundColor>
+                        <FontSize>9pt</FontSize>
+                        <FontWeight>700</FontWeight>
+                        <TextAlign>Center</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>7</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>Debits</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox62">
+                      <rd:DefaultName>textbox62</rd:DefaultName>
+                      <Style>
+                        <BackgroundColor>LightSteelBlue</BackgroundColor>
+                        <FontSize>9pt</FontSize>
+                        <FontWeight>700</FontWeight>
+                        <TextAlign>Center</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>6</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>Ending Balance</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+              <Height>0.25in</Height>
+            </TableRow>
+          </TableRows>
+          <RepeatOnNewPage>true</RepeatOnNewPage>
+        </Header>
+        <TableColumns>
+          <TableColumn>
+            <Width>0.88947in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>1.65188in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>2.55147in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>1.02666in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>0.87797in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>0.75255in</Width>
+          </TableColumn>
+        </TableColumns>
+        <Height>0.5in</Height>
+        <Left>0.125in</Left>
+      </Table>
+      <List Name="list1">
+        <ZIndex>3</ZIndex>
+        <DataSetName>Header</DataSetName>
+        <ReportItems>
+          <Textbox Name="textbox2">
+            <rd:DefaultName>textbox2</rd:DefaultName>
+            <Width>1.64062in</Width>
+            <Style>
+              <FontSize>12pt</FontSize>
+              <FontWeight>700</FontWeight>
+              <TextAlign>Center</TextAlign>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+            <ZIndex>8</ZIndex>
+            <CanGrow>true</CanGrow>
+            <Left>3.11719in</Left>
+            <Height>0.25in</Height>
+            <Value>THIS IS NOT A BILL</Value>
+          </Textbox>
+          <Textbox Name="textbox22">
+            <Top>2.25in</Top>
+            <Width>2.75in</Width>
+            <Style>
+              <BorderStyle>
+                <Top>Solid</Top>
+              </BorderStyle>
+              <FontSize>8pt</FontSize>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+            <ZIndex>7</ZIndex>
+            <CanGrow>true</CanGrow>
+            <Left>5in</Left>
+            <Height>0.2in</Height>
+            <Value>Home Phone                           Work Phone</Value>
+          </Textbox>
+          <Textbox Name="textbox21">
+            <Top>1.875in</Top>
+            <Width>2.75in</Width>
+            <Style>
+              <BorderStyle>
+                <Top>Solid</Top>
+              </BorderStyle>
+              <FontSize>8pt</FontSize>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+            <ZIndex>6</ZIndex>
+            <CanGrow>true</CanGrow>
+            <Left>5in</Left>
+            <Height>0.2in</Height>
+            <Value>City                                    State                    Zip</Value>
+          </Textbox>
+          <Textbox Name="textbox20">
+            <Top>1.5in</Top>
+            <Width>2.75in</Width>
+            <Style>
+              <BorderStyle>
+                <Top>Solid</Top>
+              </BorderStyle>
+              <FontSize>8pt</FontSize>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+            <ZIndex>5</ZIndex>
+            <CanGrow>true</CanGrow>
+            <Left>5in</Left>
+            <Height>0.2in</Height>
+            <Value>Address</Value>
+          </Textbox>
+          <Textbox Name="textbox19">
+            <Top>1.125in</Top>
+            <Width>2.75in</Width>
+            <Style>
+              <FontSize>8pt</FontSize>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+            <ZIndex>4</ZIndex>
+            <CanGrow>true</CanGrow>
+            <Left>5in</Left>
+            <Height>0.2in</Height>
+            <Value>Print Change of Address or Telephone Number:</Value>
+          </Textbox>
+          <Rectangle Name="rectangle1">
+            <Left>5in</Left>
+            <ZIndex>3</ZIndex>
+            <ReportItems>
+              <Textbox Name="textbox5">
+                <rd:DefaultName>textbox5</rd:DefaultName>
+                <Top>0.125in</Top>
+                <Width>1.375in</Width>
+                <Style>
+                  <BackgroundColor>White</BackgroundColor>
+                  <FontSize>9pt</FontSize>
+                  <PaddingLeft>2pt</PaddingLeft>
+                  <PaddingRight>2pt</PaddingRight>
+                  <PaddingTop>2pt</PaddingTop>
+                  <PaddingBottom>2pt</PaddingBottom>
+                </Style>
+                <ZIndex>1</ZIndex>
+                <CanGrow>true</CanGrow>
+                <Left>0.125in</Left>
+                <Height>0.2in</Height>
+                <Value>Client ID:</Value>
+              </Textbox>
+              <Textbox Name="textbox6">
+                <Top>0.125in</Top>
+                <Width>1.125in</Width>
+                <Style>
+                  <BackgroundColor>White</BackgroundColor>
+                  <FontSize>9pt</FontSize>
+                  <TextAlign>Left</TextAlign>
+                  <PaddingLeft>2pt</PaddingLeft>
+                  <PaddingRight>2pt</PaddingRight>
+                  <PaddingTop>2pt</PaddingTop>
+                  <PaddingBottom>2pt</PaddingBottom>
+                </Style>
+                <CanGrow>true</CanGrow>
+                <Left>1.5in</Left>
+                <Height>0.2in</Height>
+                <Value>=First(Fields!ClientID.Value,"ClientInfo")</Value>
+              </Textbox>
+            </ReportItems>
+            <Top>0.375in</Top>
+            <Width>2.75in</Width>
+            <Style>
+              <BackgroundColor>Gray</BackgroundColor>
+            </Style>
+            <Height>0.47in</Height>
+          </Rectangle>
+          <Textbox Name="textbox1">
+            <rd:DefaultName>textbox1</rd:DefaultName>
+            <Top>0.375in</Top>
+            <Width>3.875in</Width>
+            <Style>
+              <FontWeight>700</FontWeight>
+              <TextAlign>Left</TextAlign>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+            <ZIndex>2</ZIndex>
+            <CanGrow>true</CanGrow>
+            <Height>1in</Height>
+            <Value>=First(Fields!CompanyName.Value) &amp; iif( First(Fields!CompanyName.Value) is nothing,"",vbcrlf) &amp; First(Fields!Address1.Value) &amp; iif( First(Fields!Address1.Value) is nothing,"",vbcrlf) &amp; First(Fields!Address2.Value) &amp; iif( First(Fields!Address2.Value) is nothing,"",vbcrlf) &amp; First(Fields!City.Value) &amp; ", " &amp; First(Fields!State.Value) &amp; "  " &amp; First(Fields!Zip.Value) &amp; vbcrlf &amp;  "Phone: " &amp; First(Fields!ClientPhoneNumber.Value) &amp; "  Fax: " &amp; First(Fields!ClientFaxNumber.Value)</Value>
+          </Textbox>
+          <Textbox Name="textbox30">
+            <rd:DefaultName>textbox30</rd:DefaultName>
+            <Top>1.625in</Top>
+            <Width>2.75in</Width>
+            <Style>
+              <FontWeight>700</FontWeight>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+            <ZIndex>1</ZIndex>
+            <CanGrow>true</CanGrow>
+            <Height>0.175in</Height>
+            <Value>=First(Fields!ClientLastName.Value,"ClientInfo") &amp; iif(First(Fields!ClientLastName.Value,"ClientInfo") is nothing,"",", ") &amp; First(Fields!ClientFirstName.Value,"ClientInfo") &amp; iif(First(Fields!ClientLastName.Value,"ClientInfo") is nothing,"",vbcrlf) &amp; First(Fields!CoAppLastName.Value,"ClientInfo") &amp; iif(First(Fields!CoAppLastName.Value,"ClientInfo") is nothing,"",", ") &amp; First(Fields!CoAppFirstName.Value,"ClientInfo") &amp; iif(First(Fields!CoAppFirstName.Value,"ClientInfo") is nothing,"","")</Value>
+          </Textbox>
+          <Textbox Name="textbox31">
+            <rd:DefaultName>textbox31</rd:DefaultName>
+            <Top>1.875in</Top>
+            <Width>2.75in</Width>
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+            <CanGrow>true</CanGrow>
+            <Height>0.175in</Height>
+            <Value>=First(Fields!ClientAddress1.Value,"ClientInfo") &amp; iif(First(Fields!ClientAddress1.Value,"ClientInfo") is nothing,"",vbcrlf) &amp; First(Fields!ClientAddress2.Value,"ClientInfo") &amp; iif(First(Fields!ClientAddress2.Value,"ClientInfo") is nothing,"",vbcrlf) &amp; First(Fields!ClientCity.Value,"ClientInfo") &amp; iif(First(Fields!ClientCity.Value,"ClientInfo") is nothing,"",", ") &amp; First(Fields!ClientState.Value,"ClientInfo") &amp; iif(First(Fields!ClientState.Value,"ClientInfo") is nothing,""," ") &amp; First(Fields!ClientZip.Value,"ClientInfo") &amp; vbcrlf</Value>
+          </Textbox>
+        </ReportItems>
+        <Width>7.875in</Width>
+        <Height>3.1in</Height>
+      </List>
+      <Textbox Name="Title">
+        <rd:DefaultName>Title</rd:DefaultName>
+        <Top>3.25in</Top>
+        <Width>7.31905in</Width>
+        <Style>
+          <FontSize>12pt</FontSize>
+          <FontWeight>700</FontWeight>
+          <TextAlign>Center</TextAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>2</ZIndex>
+        <Left>0.34539in</Left>
+        <Height>0.2in</Height>
+        <Value>ACCOUNT STATEMENT</Value>
+      </Textbox>
+      <Line Name="line1">
+        <Top>3.125in</Top>
+        <Width>8in</Width>
+        <Style>
+          <BorderStyle>
+            <Default>Dashed</Default>
+          </BorderStyle>
+          <BorderWidth>
+            <Default>2pt</Default>
+          </BorderWidth>
+        </Style>
+        <ZIndex>1</ZIndex>
+        <Height>0in</Height>
+      </Line>
+      <Rectangle Name="rectangle3">
+        <Left>0.88773in</Left>
+        <ReportItems>
+          <Rectangle Name="rectangle2">
+            <Left>0.11719in</Left>
+            <ReportItems>
+              <Textbox Name="textbox23">
+                <rd:DefaultName>textbox23</rd:DefaultName>
+                <Style>
+                  <FontSize>8pt</FontSize>
+                  <TextAlign>Left</TextAlign>
+                  <PaddingLeft>2pt</PaddingLeft>
+                  <PaddingRight>2pt</PaddingRight>
+                  <PaddingTop>2pt</PaddingTop>
+                  <PaddingBottom>2pt</PaddingBottom>
+                </Style>
+                <CanGrow>true</CanGrow>
+                <Height>0.25in</Height>
+                <Value>=iif(First(Fields!datedue.Value,"DueDate") is nothing,"","Your next deposit is scheduled for ") &amp; Format(First(Fields!datedue.Value,"DueDate"),"d")</Value>
+              </Textbox>
+            </ReportItems>
+            <Top>0.125in</Top>
+            <Width>6in</Width>
+            <Style>
+              <BorderStyle>
+                <Default>Solid</Default>
+              </BorderStyle>
+            </Style>
+            <Height>1.25in</Height>
+          </Rectangle>
+        </ReportItems>
+        <Top>4.875in</Top>
+        <Width>6.23438in</Width>
+        <Style>
+          <BorderStyle>
+            <Default>Solid</Default>
+          </BorderStyle>
+        </Style>
+        <Height>1.5in</Height>
+      </Rectangle>
+    </ReportItems>
+    <Height>11in</Height>
+  </Body>
+  <Language>en-US</Language>
+  <TopMargin>0.25in</TopMargin>
+</Report>

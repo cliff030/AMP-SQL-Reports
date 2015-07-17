@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ToolsVersion="2.0">
+  <State>$base64$PFNvdXJjZUNvbnRyb2xJbmZvIHhtbG5zOnhzZD0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEiIHhtbG5zOnhzaT0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEtaW5zdGFuY2UiIHhtbG5zOmRkbDI9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDAzL2VuZ2luZS8yIiB4bWxuczpkZGwyXzI9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDAzL2VuZ2luZS8yLzIiIHhtbG5zOmRkbDEwMF8xMDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDA4L2VuZ2luZS8xMDAvMTAwIiB4bWxuczpkZGwyMDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDEwL2VuZ2luZS8yMDAiIHhtbG5zOmRkbDIwMF8yMDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDEwL2VuZ2luZS8yMDAvMjAwIiB4bWxuczpkZGwzMDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDExL2VuZ2luZS8zMDAiIHhtbG5zOmRkbDMwMF8zMDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDExL2VuZ2luZS8zMDAvMzAwIiB4bWxuczpkZGw0MDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDEyL2VuZ2luZS80MDAiIHhtbG5zOmRkbDQwMF80MDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDEyL2VuZ2luZS80MDAvNDAwIiB4bWxuczpkd2Q9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vRGF0YVdhcmVob3VzZS9EZXNpZ25lci8xLjAiPg0KICA8RW5hYmxlZD5mYWxzZTwvRW5hYmxlZD4NCiAgPFByb2plY3ROYW1lPjwvUHJvamVjdE5hbWU+DQogIDxBdXhQYXRoPjwvQXV4UGF0aD4NCiAgPExvY2FsUGF0aD48L0xvY2FsUGF0aD4NCiAgPFByb3ZpZGVyPjwvUHJvdmlkZXI+DQo8L1NvdXJjZUNvbnRyb2xJbmZvPg==</State>
+  <DataSources>
+    <ProjectItem>
+      <Name>CSDATA8.rds</Name>
+      <FullPath>CSDATA8.rds</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>CSDATA8_FFN.rds</Name>
+      <FullPath>CSDATA8_FFN.rds</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>CSDATA8_INC.rds</Name>
+      <FullPath>CSDATA8_INC.rds</FullPath>
+    </ProjectItem>
+  </DataSources>
+  <DataSets />
+  <Reports>
+    <ProjectItem>
+      <Name>Active Clients No ACH.rdl</Name>
+      <FullPath>Active Clients No ACH.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Active Clients Without Future Payment Points.rdl</Name>
+      <FullPath>Active Clients Without Future Payment Points.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Advance Report.rdl</Name>
+      <FullPath>Advance Report.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Advances Without Repayments.rdl</Name>
+      <FullPath>Advances Without Repayments.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>CheckRunforCheckWriter.rdl</Name>
+      <FullPath>CheckRunforCheckWriter.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>CheckWriter Settlement Fees.rdl</Name>
+      <FullPath>CheckWriter Settlement Fees.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Client Statements - Fee Increase.rdl</Name>
+      <FullPath>Client Statements - Fee Increase.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Client StatementsByID.rdl</Name>
+      <FullPath>Client StatementsByID.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>CompanySummary by Location.rdl</Name>
+      <FullPath>CompanySummary by Location.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Completed Clients by Date Range.rdl</Name>
+      <FullPath>Completed Clients by Date Range.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Converted Leads Per Year.rdl</Name>
+      <FullPath>Converted Leads Per Year.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>ConvertedLeadsByDateRange.rdl</Name>
+      <FullPath>ConvertedLeadsByDateRange.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>CSDATA8_INCSettlement Fees By Location.rdl</Name>
+      <FullPath>CSDATA8_INCSettlement Fees By Location.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>CSDATA8Settlement Fees By Location.rdl</Name>
+      <FullPath>CSDATA8Settlement Fees By Location.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Custom_Refund_Cover_Letter.rdl</Name>
+      <FullPath>Custom_Refund_Cover_Letter.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Custom_RefundCoverLetterByCheckRun (1).rdl</Name>
+      <FullPath>Custom_RefundCoverLetterByCheckRun (1).rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Lead Analysis.rdl</Name>
+      <FullPath>Lead Analysis.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Old Payments Search by Location.rdl</Name>
+      <FullPath>Old Payments Search by Location.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Outstand Client Refunds No Address.rdl</Name>
+      <FullPath>Outstand Client Refunds No Address.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Payments Search by Location.rdl</Name>
+      <FullPath>Payments Search by Location.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Refund Checks.rdl</Name>
+      <FullPath>Refund Checks.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>RetentionRateDetailByMonth.rdl</Name>
+      <FullPath>RetentionRateDetailByMonth.rdl</FullPath>
+    </ProjectItem>
+  </Reports>
+  <Configurations>
+    <Configuration>
+      <Name>Debug</Name>
+      <Platform>Win32</Platform>
+      <Options>
+        <OutputPath>bin\Debug</OutputPath>
+        <TargetServerVersion>SSRS2008</TargetServerVersion>
+        <TargetFolder>AMP Reports</TargetFolder>
+        <TargetDataSourceFolder>Data Sources</TargetDataSourceFolder>
+      </Options>
+    </Configuration>
+    <Configuration>
+      <Name>DebugLocal</Name>
+      <Platform>Win32</Platform>
+      <Options>
+        <OutputPath>bin\DebugLocal</OutputPath>
+        <TargetServerVersion>SSRS2008</TargetServerVersion>
+        <TargetFolder>AMP Reports</TargetFolder>
+        <TargetDataSourceFolder>Data Sources</TargetDataSourceFolder>
+      </Options>
+    </Configuration>
+    <Configuration>
+      <Name>Release</Name>
+      <Platform>Win32</Platform>
+      <Options>
+        <OutputPath>bin\Release</OutputPath>
+        <TargetServerVersion>SSRS2008</TargetServerVersion>
+        <TargetFolder>AMP Reports</TargetFolder>
+        <TargetDataSourceFolder>Data Sources</TargetDataSourceFolder>
+      </Options>
+    </Configuration>
+  </Configurations>
+</Project>

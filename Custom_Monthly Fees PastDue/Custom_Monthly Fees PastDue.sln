@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{F14B399A-7131-4C87-9E4B-1186C45EF12D}") = "Custom_Monthly Fees PastDue", "Custom_Monthly Fees PastDue\Custom_Monthly Fees PastDue.rptproj", "{D737AE05-E1C5-4D16-944A-6CF15BE569DB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Default = Debug|Default
+		DebugLocal|Default = DebugLocal|Default
+		Release|Default = Release|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D737AE05-E1C5-4D16-944A-6CF15BE569DB}.Debug|Default.ActiveCfg = Debug
+		{D737AE05-E1C5-4D16-944A-6CF15BE569DB}.Debug|Default.Build.0 = DebugLocal
+		{D737AE05-E1C5-4D16-944A-6CF15BE569DB}.Debug|Default.Deploy.0 = DebugLocal
+		{D737AE05-E1C5-4D16-944A-6CF15BE569DB}.DebugLocal|Default.ActiveCfg = DebugLocal
+		{D737AE05-E1C5-4D16-944A-6CF15BE569DB}.DebugLocal|Default.Build.0 = DebugLocal
+		{D737AE05-E1C5-4D16-944A-6CF15BE569DB}.Release|Default.ActiveCfg = Release
+		{D737AE05-E1C5-4D16-944A-6CF15BE569DB}.Release|Default.Build.0 = Release
+		{D737AE05-E1C5-4D16-944A-6CF15BE569DB}.Release|Default.Deploy.0 = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

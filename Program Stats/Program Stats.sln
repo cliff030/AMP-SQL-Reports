@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{F14B399A-7131-4C87-9E4B-1186C45EF12D}") = "Program Stats", "Program Stats\Program Stats.rptproj", "{9580959F-9EE1-41C7-A982-79D511243B4F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Default = Debug|Default
+		DebugLocal|Default = DebugLocal|Default
+		Release|Default = Release|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9580959F-9EE1-41C7-A982-79D511243B4F}.Debug|Default.ActiveCfg = Debug
+		{9580959F-9EE1-41C7-A982-79D511243B4F}.Debug|Default.Build.0 = DebugLocal
+		{9580959F-9EE1-41C7-A982-79D511243B4F}.Debug|Default.Deploy.0 = DebugLocal
+		{9580959F-9EE1-41C7-A982-79D511243B4F}.DebugLocal|Default.ActiveCfg = DebugLocal
+		{9580959F-9EE1-41C7-A982-79D511243B4F}.DebugLocal|Default.Build.0 = DebugLocal
+		{9580959F-9EE1-41C7-A982-79D511243B4F}.Release|Default.ActiveCfg = Release
+		{9580959F-9EE1-41C7-A982-79D511243B4F}.Release|Default.Build.0 = Release
+		{9580959F-9EE1-41C7-A982-79D511243B4F}.Release|Default.Deploy.0 = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

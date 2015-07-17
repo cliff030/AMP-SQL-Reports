@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2005/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <DataSources>
+    <DataSource Name="CSDATA8">
+      <rd:DataSourceID>54dc618b-df2e-4b0f-922e-1c157450a6e1</rd:DataSourceID>
+      <DataSourceReference>CSDATA8</DataSourceReference>
+    </DataSource>
+  </DataSources>
+  <InteractiveHeight>11in</InteractiveHeight>
+  <ReportParameters>
+    <ReportParameter Name="ACHBatchID">
+      <DataType>String</DataType>
+      <Prompt>ACHBatchID</Prompt>
+    </ReportParameter>
+  </ReportParameters>
+  <rd:DrawGrid>true</rd:DrawGrid>
+  <InteractiveWidth>8.5in</InteractiveWidth>
+  <rd:SnapToGrid>true</rd:SnapToGrid>
+  <RightMargin>0.2in</RightMargin>
+  <LeftMargin>0.2in</LeftMargin>
+  <BottomMargin>0.25in</BottomMargin>
+  <rd:ReportID>762b4c0a-82f2-46da-be99-82bfd4130e77</rd:ReportID>
+  <DataSets>
+    <DataSet Name="CSDATA8">
+      <Fields>
+        <Field Name="ClientID">
+          <DataField>ClientID</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>CSDATA8</DataSourceName>
+        <CommandText>SELECT ClientID
+FROM ACHBatchDetails
+WHERE ACHBatchID = @ACHBatchID</CommandText>
+        <QueryParameters>
+          <QueryParameter Name="@ACHBatchID">
+            <Value>=Parameters!ACHBatchID.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+      </Query>
+    </DataSet>
+  </DataSets>
+  <Width>8.00983in</Width>
+  <Body>
+    <ReportItems>
+      <List Name="list1">
+        <DataSetName>CSDATA8</DataSetName>
+        <ReportItems>
+          <Rectangle Name="rectangle1">
+            <ReportItems>
+              <Subreport Name="subreport1">
+                <Parameters>
+                  <Parameter Name="ClientID">
+                    <Value>=First(Fields!ClientID.Value)</Value>
+                  </Parameter>
+                  <Parameter Name="NoLock">
+                    <Value>false</Value>
+                  </Parameter>
+                  <Parameter Name="BaseURL">
+                    <Value />
+                  </Parameter>
+                </Parameters>
+                <ReportName>Custom_ClientStatementsByID[2]</ReportName>
+              </Subreport>
+            </ReportItems>
+          </Rectangle>
+        </ReportItems>
+        <Style>
+          <TextAlign>Center</TextAlign>
+        </Style>
+        <Grouping Name="list1_Details_Group">
+          <GroupExpressions>
+            <GroupExpression>=Fields!ClientID.Value</GroupExpression>
+          </GroupExpressions>
+          <PageBreakAtEnd>true</PageBreakAtEnd>
+        </Grouping>
+      </List>
+    </ReportItems>
+    <Height>11in</Height>
+  </Body>
+  <Language>en-US</Language>
+  <TopMargin>0.25in</TopMargin>
+</Report>

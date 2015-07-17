@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{F14B399A-7131-4C87-9E4B-1186C45EF12D}") = "Client Statements", "Client Statements\Client Statements.rptproj", "{C61A3FEC-EAED-4589-BBF7-3374D6E9C9D5}"
+EndProject
+Global
+	GlobalSection(SubversionScc) = preSolution
+		Svn-Managed = True
+		Manager = AnkhSVN - Subversion Support for Visual Studio
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Default = Debug|Default
+		DebugLocal|Default = DebugLocal|Default
+		Release|Default = Release|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C61A3FEC-EAED-4589-BBF7-3374D6E9C9D5}.Debug|Default.ActiveCfg = Debug
+		{C61A3FEC-EAED-4589-BBF7-3374D6E9C9D5}.Debug|Default.Build.0 = DebugLocal
+		{C61A3FEC-EAED-4589-BBF7-3374D6E9C9D5}.Debug|Default.Deploy.0 = DebugLocal
+		{C61A3FEC-EAED-4589-BBF7-3374D6E9C9D5}.DebugLocal|Default.ActiveCfg = DebugLocal
+		{C61A3FEC-EAED-4589-BBF7-3374D6E9C9D5}.DebugLocal|Default.Build.0 = DebugLocal
+		{C61A3FEC-EAED-4589-BBF7-3374D6E9C9D5}.Release|Default.ActiveCfg = Release
+		{C61A3FEC-EAED-4589-BBF7-3374D6E9C9D5}.Release|Default.Build.0 = Release
+		{C61A3FEC-EAED-4589-BBF7-3374D6E9C9D5}.Release|Default.Deploy.0 = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
