@@ -105,6 +105,10 @@
       <Name>RetentionRateDetailByMonth.rdl</Name>
       <FullPath>RetentionRateDetailByMonth.rdl</FullPath>
     </ProjectItem>
+    <ProjectItem>
+      <Name>Client Statements by Date.rdl</Name>
+      <FullPath>Client Statements by Date.rdl</FullPath>
+    </ProjectItem>
   </Reports>
   <Configurations>
     <Configuration>

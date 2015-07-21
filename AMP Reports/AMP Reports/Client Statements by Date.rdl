@@ -133,7 +133,7 @@
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>textbox30</rd:DefaultName>
-                          <Top>1.625in</Top>
+                          <Top>1.875in</Top>
                           <Height>0.175in</Height>
                           <Width>2.75in</Width>
                           <Style>
@@ -152,7 +152,7 @@
                                 <TextRun>
                                   <Value>=First(Fields!CompanyName.Value, "list1") &amp; iif( First(Fields!CompanyName.Value, "list1") is nothing,"",vbcrlf) &amp; First(Fields!Address1.Value, "list1") &amp; iif( First(Fields!Address1.Value, "list1") is nothing,"",vbcrlf) &amp; First(Fields!Address2.Value, "list1") &amp; iif( First(Fields!Address2.Value, "list1") is nothing,"",vbcrlf) &amp; First(Fields!City.Value, "list1") &amp; ", " &amp; First(Fields!State.Value, "list1") &amp; "  " &amp; First(Fields!Zip.Value, "list1") &amp; vbcrlf &amp;  "Phone: " &amp; First(Fields!ClientPhoneNumber.Value, "list1") &amp; "  Fax: " &amp; First(Fields!ClientFaxNumber.Value, "list1")</Value>
                                   <Style>
-                                    <FontWeight>Normal</FontWeight>
+                                    <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -162,7 +162,7 @@
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>textbox1</rd:DefaultName>
-                          <Top>0.375in</Top>
+                          <Top>0.625in</Top>
                           <Height>1in</Height>
                           <Width>3.875in</Width>
                           <ZIndex>1</ZIndex>
@@ -237,7 +237,7 @@
                             </Textbox>
                           </ReportItems>
                           <DataElementOutput>ContentsOnly</DataElementOutput>
-                          <Top>0.375in</Top>
+                          <Top>0.625in</Top>
                           <Left>5in</Left>
                           <Height>0.47in</Height>
                           <Width>2.75in</Width>
@@ -262,7 +262,7 @@
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <Top>1.125in</Top>
+                          <Top>1.5in</Top>
                           <Left>5in</Left>
                           <Height>0.2in</Height>
                           <Width>2.75in</Width>
@@ -290,7 +290,7 @@
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <Top>1.5in</Top>
+                          <Top>1.875in</Top>
                           <Left>5in</Left>
                           <Height>0.2in</Height>
                           <Width>2.75in</Width>
@@ -321,7 +321,7 @@
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <Top>1.875in</Top>
+                          <Top>2.25in</Top>
                           <Left>5in</Left>
                           <Height>0.2in</Height>
                           <Width>2.75in</Width>
@@ -352,7 +352,7 @@
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <Top>2.25in</Top>
+                          <Top>2.625in</Top>
                           <Left>5in</Left>
                           <Height>0.2in</Height>
                           <Width>2.75in</Width>
@@ -387,7 +387,8 @@
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>textbox2</rd:DefaultName>
-                          <Left>3.11719in</Left>
+                          <Top>0.25in</Top>
+                          <Left>3.125in</Left>
                           <Height>0.25in</Height>
                           <Width>1.64062in</Width>
                           <ZIndex>7</ZIndex>
@@ -477,8 +478,16 @@
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>textbox57</rd:DefaultName>
-                      <ZIndex>11</ZIndex>
+                      <ZIndex>17</ZIndex>
                       <Style>
+                        <Border>
+                          <Color>LightSteelBlue</Color>
+                          <Style>None</Style>
+                        </Border>
+                        <BottomBorder>
+                          <Style>Solid</Style>
+                          <Width>2pt</Width>
+                        </BottomBorder>
                         <BackgroundColor>LightSteelBlue</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
@@ -508,8 +517,16 @@
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>textbox58</rd:DefaultName>
-                      <ZIndex>10</ZIndex>
+                      <ZIndex>16</ZIndex>
                       <Style>
+                        <Border>
+                          <Color>LightSteelBlue</Color>
+                          <Style>None</Style>
+                        </Border>
+                        <BottomBorder>
+                          <Style>Solid</Style>
+                          <Width>2pt</Width>
+                        </BottomBorder>
                         <BackgroundColor>LightSteelBlue</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
@@ -539,8 +556,16 @@
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>textbox59</rd:DefaultName>
-                      <ZIndex>9</ZIndex>
+                      <ZIndex>15</ZIndex>
                       <Style>
+                        <Border>
+                          <Color>LightSteelBlue</Color>
+                          <Style>None</Style>
+                        </Border>
+                        <BottomBorder>
+                          <Style>Solid</Style>
+                          <Width>2pt</Width>
+                        </BottomBorder>
                         <BackgroundColor>LightSteelBlue</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
@@ -567,13 +592,21 @@
                             </TextRun>
                           </TextRuns>
                           <Style>
-                            <TextAlign>Center</TextAlign>
+                            <TextAlign>Right</TextAlign>
                           </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>textbox60</rd:DefaultName>
-                      <ZIndex>8</ZIndex>
+                      <ZIndex>14</ZIndex>
                       <Style>
+                        <Border>
+                          <Color>LightSteelBlue</Color>
+                          <Style>None</Style>
+                        </Border>
+                        <BottomBorder>
+                          <Style>Solid</Style>
+                          <Width>2pt</Width>
+                        </BottomBorder>
                         <BackgroundColor>LightSteelBlue</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
@@ -600,13 +633,25 @@
                             </TextRun>
                           </TextRuns>
                           <Style>
-                            <TextAlign>Center</TextAlign>
+                            <TextAlign>Right</TextAlign>
                           </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>textbox61</rd:DefaultName>
-                      <ZIndex>7</ZIndex>
+                      <ZIndex>13</ZIndex>
                       <Style>
+                        <Border>
+                          <Color>LightSteelBlue</Color>
+                          <Style>None</Style>
+                          <Width>2pt</Width>
+                        </Border>
+                        <BottomBorder>
+                          <Style>Solid</Style>
+                          <Width>2pt</Width>
+                        </BottomBorder>
+                        <RightBorder>
+                          <Style>Solid</Style>
+                        </RightBorder>
                         <BackgroundColor>LightSteelBlue</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
@@ -638,8 +683,23 @@
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>textbox62</rd:DefaultName>
-                      <ZIndex>6</ZIndex>
+                      <ZIndex>12</ZIndex>
                       <Style>
+                        <Border>
+                          <Color>LightSteelBlue</Color>
+                          <Style>None</Style>
+                          <Width>2pt</Width>
+                        </Border>
+                        <BottomBorder>
+                          <Style>Solid</Style>
+                        </BottomBorder>
+                        <LeftBorder>
+                          <Style>Solid</Style>
+                        </LeftBorder>
+                        <RightBorder>
+                          <Style>Solid</Style>
+                          <Width>1pt</Width>
+                        </RightBorder>
                         <BackgroundColor>LightSteelBlue</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
@@ -676,7 +736,7 @@
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>textbox46</rd:DefaultName>
-                      <ZIndex>5</ZIndex>
+                      <ZIndex>11</ZIndex>
                       <Style>
                         <TopBorder>
                           <Color>LightSteelBlue</Color>
@@ -710,7 +770,7 @@
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>textbox47</rd:DefaultName>
-                      <ZIndex>4</ZIndex>
+                      <ZIndex>10</ZIndex>
                       <Style>
                         <TopBorder>
                           <Color>LightSteelBlue</Color>
@@ -734,7 +794,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!description.Value</Value>
+                              <Value>=Fields!summarydescription.Value</Value>
                               <Style>
                                 <Color>DarkBlue</Color>
                               </Style>
@@ -744,7 +804,7 @@
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>textbox48</rd:DefaultName>
-                      <ZIndex>3</ZIndex>
+                      <ZIndex>9</ZIndex>
                       <Style>
                         <TopBorder>
                           <Color>LightSteelBlue</Color>
@@ -781,7 +841,7 @@
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>textbox49</rd:DefaultName>
-                      <ZIndex>2</ZIndex>
+                      <ZIndex>8</ZIndex>
                       <Style>
                         <TopBorder>
                           <Color>LightSteelBlue</Color>
@@ -818,7 +878,7 @@
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>textbox50</rd:DefaultName>
-                      <ZIndex>1</ZIndex>
+                      <ZIndex>7</ZIndex>
                       <Style>
                         <TopBorder>
                           <Color>LightSteelBlue</Color>
@@ -842,7 +902,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!starting_balance.Value + (runningvalue(Fields!credit.Value - Fields!debits.Value, sum, nothing))</Value>
+                              <Value>=First(Fields!starting_balance.Value) +runningvalue( Fields!credit.Value - Fields!debits.Value, sum, nothing)</Value>
                               <Style>
                                 <Format>c</Format>
                                 <Color>DarkBlue</Color>
@@ -855,12 +915,202 @@
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>textbox51</rd:DefaultName>
+                      <ZIndex>6</ZIndex>
                       <Style>
                         <TopBorder>
                           <Color>LightSteelBlue</Color>
                           <Style>Solid</Style>
                           <Width>1pt</Width>
                         </TopBorder>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+              </TablixCells>
+            </TablixRow>
+            <TablixRow>
+              <Height>0.25in</Height>
+              <TablixCells>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="textbox52">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value />
+                              <Style>
+                                <FontSize>8pt</FontSize>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>textbox52</rd:DefaultName>
+                      <ZIndex>5</ZIndex>
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="textbox53">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=iif( Fields!pmt.Value = 0, nothing,Fields!name_creditor.Value)</Value>
+                              <Style>
+                                <FontSize>8pt</FontSize>
+                                <Format>d</Format>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>textbox53</rd:DefaultName>
+                      <ZIndex>4</ZIndex>
+                      <Style>
+                        <BackgroundColor>=iif(rownumber(nothing) mod 2, "White","WhiteSmoke")</BackgroundColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="textbox54">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!description.Value</Value>
+                              <Style>
+                                <FontSize>8pt</FontSize>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>textbox54</rd:DefaultName>
+                      <ZIndex>3</ZIndex>
+                      <Style>
+                        <BackgroundColor>=iif(rownumber(nothing) mod 2, "White","WhiteSmoke")</BackgroundColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="textbox55">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!credit.Value</Value>
+                              <Style>
+                                <FontSize>8pt</FontSize>
+                                <Format>c</Format>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>textbox55</rd:DefaultName>
+                      <ZIndex>2</ZIndex>
+                      <Style>
+                        <BackgroundColor>=iif(rownumber(nothing) mod 2, "White","WhiteSmoke")</BackgroundColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="textbox56">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=-Fields!debits.Value</Value>
+                              <Style>
+                                <FontSize>8pt</FontSize>
+                                <Format>c</Format>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>textbox56</rd:DefaultName>
+                      <ZIndex>1</ZIndex>
+                      <Style>
+                        <BackgroundColor>=iif(rownumber(nothing) mod 2, "White","WhiteSmoke")</BackgroundColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="textbox77">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value />
+                              <Style>
+                                <FontSize>8pt</FontSize>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>textbox77</rd:DefaultName>
+                      <Style>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -903,15 +1153,28 @@
                   <KeepWithGroup>After</KeepWithGroup>
                   <KeepTogether>true</KeepTogether>
                 </TablixMember>
+                <TablixMember>
+                  <Group Name="table1_Details_Group">
+                    <DataElementName>Detail</DataElementName>
+                  </Group>
+                  <TablixMembers>
+                    <TablixMember />
+                  </TablixMembers>
+                  <Visibility>
+                    <ToggleItem>textbox46</ToggleItem>
+                  </Visibility>
+                  <DataElementName>Detail_Collection</DataElementName>
+                  <DataElementOutput>Output</DataElementOutput>
+                  <KeepTogether>true</KeepTogether>
+                </TablixMember>
               </TablixMembers>
             </TablixMember>
           </TablixMembers>
         </TablixRowHierarchy>
-        <KeepTogether>true</KeepTogether>
         <DataSetName>Statements</DataSetName>
         <Top>3.625in</Top>
         <Left>0.125in</Left>
-        <Height>0.5in</Height>
+        <Height>0.75in</Height>
         <Width>7.75in</Width>
         <ZIndex>4</ZIndex>
         <Style />
@@ -938,7 +1201,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>="Accumulated Funds: $" &amp; Fields!AccumulatedFunds.Value</Value>
+                                  <Value>="Accumulated Funds: $" &amp; sum(Fields!AccumulatedFunds.Value, "AccumulatedFundsList")</Value>
                                   <Style>
                                     <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
@@ -953,6 +1216,13 @@
                           <Height>0.25in</Height>
                           <Width>2.125in</Width>
                           <Style>
+                            <Border>
+                              <Color>LightSteelBlue</Color>
+                              <Style>None</Style>
+                            </Border>
+                            <RightBorder>
+                              <Style>Solid</Style>
+                            </RightBorder>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -961,7 +1231,15 @@
                         </Textbox>
                       </ReportItems>
                       <KeepTogether>true</KeepTogether>
-                      <Style />
+                      <Style>
+                        <Border>
+                          <Color>LightSteelBlue</Color>
+                          <Style>None</Style>
+                        </Border>
+                        <BottomBorder>
+                          <Style>Solid</Style>
+                        </BottomBorder>
+                      </Style>
                     </Rectangle>
                   </CellContents>
                 </TablixCell>
@@ -1090,7 +1368,8 @@
             <Value>=Parameters!ClientID.Value</Value>
           </QueryParameter>
         </QueryParameters>
-        <CommandText>if @NoLock = 1
+        <CommandText>
+					if @NoLock = 1
 					begin
 					set transaction isolation level read uncommitted
 					end
@@ -1099,7 +1378,8 @@
 					FROM Clients AS c
 					LEFT OUTER JOIN CoApps AS co
 					ON c.ClientID = co.ClientID
-					WHERE c.ClientID=@ClientID</CommandText>
+					WHERE c.ClientID=@ClientID
+				</CommandText>
         <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
       </Query>
       <Fields>
@@ -1149,19 +1429,18 @@
       <Query>
         <DataSourceName>CREDITSOFT</DataSourceName>
         <QueryParameters>
-          <QueryParameter Name="@NoLock">
-            <Value>=Parameters!NoLock.Value</Value>
+          <QueryParameter Name="@StartDate">
+            <Value>=Parameters!StartDate.Value</Value>
           </QueryParameter>
           <QueryParameter Name="@ClientID">
             <Value>=Parameters!ClientID.Value</Value>
           </QueryParameter>
+          <QueryParameter Name="@EndDate">
+            <Value>=Parameters!EndDate.Value</Value>
+          </QueryParameter>
         </QueryParameters>
-        <CommandText>if @NoLock = 1
-					begin
-					set transaction isolation level read uncommitted
-					end
-
-					EXEC Custom_DebitsCredits @ClientID</CommandText>
+        <CommandType>StoredProcedure</CommandType>
+        <CommandText>Custom_DebitsCreditsByDate</CommandText>
         <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
       </Query>
       <Fields>
@@ -1218,8 +1497,8 @@
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="nsf">
-          <DataField>nsf</DataField>
-          <rd:TypeName>System.Boolean</rd:TypeName>
+          <DataField>NSF</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
         <Field Name="starting_balance">
           <DataField>starting_balance</DataField>
@@ -1235,7 +1514,7 @@
             <Value>=Parameters!ClientID.Value</Value>
           </QueryParameter>
         </QueryParameters>
-        <CommandText>SELECT DebitDate FROM dbo.GetACHScheduleDebits(@ClientID, 'Client', null, 1)</CommandText>
+        <CommandText>SELECT DebitDate FROM dbo.GetACHScheduleDebits(@ClientID, 'Client', null, 1)	</CommandText>
         <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
       </Query>
       <Fields>
@@ -1252,8 +1531,12 @@
           <QueryParameter Name="@ClientID">
             <Value>=Parameters!ClientID.Value</Value>
           </QueryParameter>
+          <QueryParameter Name="@EndDate">
+            <Value>=Parameters!EndDate.Value</Value>
+          </QueryParameter>
         </QueryParameters>
-        <CommandText>EXEC Custom_ClientAccumulatedFunds @ClientID</CommandText>
+        <CommandType>StoredProcedure</CommandType>
+        <CommandText>Custom_ClientAccumulatedFundsByDate</CommandText>
         <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
       </Query>
       <Fields>
@@ -1276,13 +1559,27 @@
           <Value>False</Value>
         </Values>
       </DefaultValue>
-      <AllowBlank>true</AllowBlank>
       <Prompt>NoLock</Prompt>
+      <Hidden>true</Hidden>
     </ReportParameter>
     <ReportParameter Name="BaseURL">
       <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value />
+        </Values>
+      </DefaultValue>
       <AllowBlank>true</AllowBlank>
       <Prompt>BaseURL</Prompt>
+      <Hidden>true</Hidden>
+    </ReportParameter>
+    <ReportParameter Name="StartDate">
+      <DataType>DateTime</DataType>
+      <Prompt>Start Date</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="EndDate">
+      <DataType>DateTime</DataType>
+      <Prompt>End Date</Prompt>
     </ReportParameter>
   </ReportParameters>
   <Language>en-US</Language>
