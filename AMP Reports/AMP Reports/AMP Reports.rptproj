@@ -46,6 +46,10 @@
       <FullPath>Client Statements - Fee Increase.rdl</FullPath>
     </ProjectItem>
     <ProjectItem>
+      <Name>Client Statements by Date.rdl</Name>
+      <FullPath>Client Statements by Date.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
       <Name>Client StatementsByID.rdl</Name>
       <FullPath>Client StatementsByID.rdl</FullPath>
     </ProjectItem>
@@ -106,8 +110,12 @@
       <FullPath>RetentionRateDetailByMonth.rdl</FullPath>
     </ProjectItem>
     <ProjectItem>
-      <Name>Client Statements by Date.rdl</Name>
-      <FullPath>Client Statements by Date.rdl</FullPath>
+      <Name>NSF Percentages by Category.rdl</Name>
+      <FullPath>NSF Percentages by Category.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>AMP Program Statistics.rdl</Name>
+      <FullPath>AMP Program Statistics.rdl</FullPath>
     </ProjectItem>
   </Reports>
   <Configurations>
