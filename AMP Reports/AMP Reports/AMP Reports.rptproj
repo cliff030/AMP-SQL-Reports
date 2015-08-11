@@ -34,6 +34,10 @@
       <FullPath>Advances Without Repayments.rdl</FullPath>
     </ProjectItem>
     <ProjectItem>
+      <Name>AMP Program Statistics.rdl</Name>
+      <FullPath>AMP Program Statistics.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
       <Name>CheckRunforCheckWriter.rdl</Name>
       <FullPath>CheckRunforCheckWriter.rdl</FullPath>
     </ProjectItem>
@@ -90,6 +94,10 @@
       <FullPath>Lead Analysis.rdl</FullPath>
     </ProjectItem>
     <ProjectItem>
+      <Name>NSF Percentages by Category.rdl</Name>
+      <FullPath>NSF Percentages by Category.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
       <Name>Old Payments Search by Location.rdl</Name>
       <FullPath>Old Payments Search by Location.rdl</FullPath>
     </ProjectItem>
@@ -110,12 +118,8 @@
       <FullPath>RetentionRateDetailByMonth.rdl</FullPath>
     </ProjectItem>
     <ProjectItem>
-      <Name>NSF Percentages by Category.rdl</Name>
-      <FullPath>NSF Percentages by Category.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>AMP Program Statistics.rdl</Name>
-      <FullPath>AMP Program Statistics.rdl</FullPath>
+      <Name>Client Statements - Fee Increase - FFN.rdl</Name>
+      <FullPath>Client Statements - Fee Increase - FFN.rdl</FullPath>
     </ProjectItem>
   </Reports>
   <Configurations>

@@ -1,8 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<RptDataSource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="CSDATA8_FFN">
-  <ConnectionProperties>
-    <Extension>SQL</Extension>
-    <ConnectString>Data Source=amp-dc;Initial Catalog=CSDATA8_FFN</ConnectString>
-  </ConnectionProperties>
-  <DataSourceID>e2df233f-7db2-4b2d-b255-2d336cd5bf6e</DataSourceID>
-</RptDataSource>
