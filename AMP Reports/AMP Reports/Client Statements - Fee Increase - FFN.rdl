@@ -14,7 +14,7 @@
                   <Paragraph>
                     <TextRuns>
                       <TextRun>
-                        <Value>="Dear " &amp; First(Fields!ClientFirstName.Value,"ClientInfo") &amp; " " &amp; First(Fields!ClientLastName.Value,"ClientInfo") &amp; "," &amp; vbcrlf &amp; "After careful analysis of our increasing overhead costs, and in accordance with our executed agreement, Account Management Plus, Inc. is writing to inform you, the client, that we will be adding a $9.95 banking fee to be charged on a monthly basis, along with your regular monthly service charge, until such time as you complete or cancel your account." &amp; vbcrlf &amp; vbcrlf &amp; "The addition of this new charge will not cause your monthly payment to increase. This new charge will become effective on your next charge date " &amp; Format(First(Fields!DebitDate.Value,"DueDate"),"d") &amp; ". At AMP we strive to provide you with the best dedicated accounting service possible by providing quality service that gives you the peace of mind you need to complete your debt settlement program. This pricing increase is essential to ensure that we can continue to provide unwavering and exemplary service to you, our valued client." &amp; vbcrlf &amp; vbcrlf &amp; "Please feel free to contact us Monday-Friday 9am-5pm EST, or by email at customersupport@myampaccount.com"</Value>
+                        <Value>=iif(Variables!LegacyCheck.Value &gt;= 1, "Dear " &amp; First(Fields!ClientFirstName.Value,"ClientInfo") &amp; " " &amp; First(Fields!ClientLastName.Value,"ClientInfo") &amp; "," &amp; vbcrlf &amp; "After careful analysis of our increasing overhead costs, and in accordance with our executed agreement, Account Management Plus, Inc. is writing to inform you, the client, that we will be adding a $9.95 banking fee to be charged on a monthly basis, along with your regular monthly service charge, until such time as you complete or cancel your account." &amp; vbcrlf &amp; vbcrlf &amp; "The addition of this new charge will not cause your monthly payment to increase. This new charge will become effective on your next charge date " &amp; Format(First(Fields!DebitDate.Value,"DueDate"),"d") &amp; ". At AMP we strive to provide you with the best dedicated accounting service possible by providing quality service that gives you the peace of mind you need to complete your debt settlement program. This pricing increase is essential to ensure that we can continue to provide unwavering and exemplary service to you, our valued client." &amp; vbcrlf &amp; vbcrlf &amp; "Please feel free to contact us Monday-Friday 9am-5pm EST, or by email at customersupport@myampaccount.com", iif(First(Fields!DebitDate.Value,"DueDate") is nothing,"","Your next deposit is scheduled for ") &amp; Format(First(Fields!DebitDate.Value,"DueDate"),"d"))</Value>
                         <Style>
                           <FontWeight>Bold</FontWeight>
                         </Style>
@@ -1266,6 +1266,23 @@
         </Field>
       </Fields>
     </DataSet>
+    <DataSet Name="LegacyCheck">
+      <Query>
+        <DataSourceName>CREDITSOFT</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="@ClientID">
+            <Value>=Parameters!ClientID.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <CommandText>SELECT COUNT(ClientID) FROM Clients WHERE CONVERT(date,DateStart) &lt;= CONVERT(date,DATEADD(day,-90,'2015-09-09 00:00:00')) AND ClientID = @ClientID </CommandText>
+      </Query>
+      <Fields>
+        <Field Name="ID">
+          <DataField />
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
   </DataSets>
   <ReportParameters>
     <ReportParameter Name="ClientID">
@@ -1276,19 +1293,30 @@
       <DataType>Boolean</DataType>
       <DefaultValue>
         <Values>
-          <Value>False</Value>
+          <Value>false</Value>
         </Values>
       </DefaultValue>
-      <AllowBlank>true</AllowBlank>
       <Prompt>NoLock</Prompt>
+      <Hidden>true</Hidden>
     </ReportParameter>
     <ReportParameter Name="BaseURL">
       <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value />
+        </Values>
+      </DefaultValue>
       <AllowBlank>true</AllowBlank>
       <Prompt>BaseURL</Prompt>
+      <Hidden>true</Hidden>
     </ReportParameter>
   </ReportParameters>
   <Language>en-US</Language>
+  <Variables>
+    <Variable Name="LegacyCheck">
+      <Value>=Sum(Fields!ID.Value, "LegacyCheck")</Value>
+    </Variable>
+  </Variables>
   <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
   <rd:ReportUnitType>Inch</rd:ReportUnitType>
   <rd:ReportID>c3bbeef0-608a-442d-9a8f-c24b4847ffa9</rd:ReportID>

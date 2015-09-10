@@ -46,6 +46,10 @@
       <FullPath>CheckWriter Settlement Fees.rdl</FullPath>
     </ProjectItem>
     <ProjectItem>
+      <Name>Client Statements - Fee Increase - FFN.rdl</Name>
+      <FullPath>Client Statements - Fee Increase - FFN.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
       <Name>Client Statements - Fee Increase.rdl</Name>
       <FullPath>Client Statements - Fee Increase.rdl</FullPath>
     </ProjectItem>
@@ -118,8 +122,8 @@
       <FullPath>RetentionRateDetailByMonth.rdl</FullPath>
     </ProjectItem>
     <ProjectItem>
-      <Name>Client Statements - Fee Increase - FFN.rdl</Name>
-      <FullPath>Client Statements - Fee Increase - FFN.rdl</FullPath>
+      <Name>Estimated Settlement Projections.rdl</Name>
+      <FullPath>Estimated Settlement Projections.rdl</FullPath>
     </ProjectItem>
   </Reports>
   <Configurations>
