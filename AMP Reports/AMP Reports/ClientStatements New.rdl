@@ -13,7 +13,7 @@
                   <Paragraph>
                     <TextRuns>
                       <TextRun>
-                        <Value>=iif(First(Fields!DebitDate.Value,"DueDate") is nothing,"","Your next deposit is scheduled for ") &amp; Format(First(Fields!DebitDate.Value,"DueDate"),"d")</Value>
+                        <Value>=iif(First(Fields!datedue.Value,"DueDate") is nothing,"","Your next deposit is scheduled for ") &amp; Format(First(Fields!datedue.Value,"DueDate"),"d")</Value>
                         <Style>
                           <FontSize>8pt</FontSize>
                         </Style>
@@ -438,10 +438,10 @@
               <Width>0.88947in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.56632in</Width>
+              <Width>1.65188in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.43394in</Width>
+              <Width>2.55147in</Width>
             </TablixColumn>
             <TablixColumn>
               <Width>1.02666in</Width>
@@ -450,7 +450,7 @@
               <Width>0.87797in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>0.83064in</Width>
+              <Width>0.75255in</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -671,7 +671,7 @@
                             </TextRun>
                           </TextRuns>
                           <Style>
-                            <TextAlign>Center</TextAlign>
+                            <TextAlign>Right</TextAlign>
                           </Style>
                         </Paragraph>
                       </Paragraphs>
@@ -776,7 +776,7 @@
                             </TextRun>
                           </TextRuns>
                           <Style>
-                            <TextAlign>Center</TextAlign>
+                            <TextAlign>Right</TextAlign>
                           </Style>
                         </Paragraph>
                       </Paragraphs>
@@ -813,7 +813,7 @@
                             </TextRun>
                           </TextRuns>
                           <Style>
-                            <TextAlign>Center</TextAlign>
+                            <TextAlign>Right</TextAlign>
                           </Style>
                         </Paragraph>
                       </Paragraphs>
@@ -850,7 +850,7 @@
                             </TextRun>
                           </TextRuns>
                           <Style>
-                            <TextAlign>Center</TextAlign>
+                            <TextAlign>Right</TextAlign>
                           </Style>
                         </Paragraph>
                       </Paragraphs>
@@ -912,7 +912,7 @@
         <Top>3.625in</Top>
         <Left>0.125in</Left>
         <Height>0.5in</Height>
-        <Width>7.625in</Width>
+        <Width>7.75in</Width>
         <ZIndex>4</ZIndex>
         <Style />
       </Tablix>
@@ -1012,7 +1012,11 @@
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
     <DataSource Name="CREDITSOFT">
-      <DataSourceReference>CSDATA8</DataSourceReference>
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString>Data Source=AMP-DC;Initial Catalog=CSDATA8</ConnectString>
+        <IntegratedSecurity>true</IntegratedSecurity>
+      </ConnectionProperties>
       <rd:SecurityType>Integrated</rd:SecurityType>
       <rd:DataSourceID>bbebd0a0-7453-4648-a3f7-4957c3671d4d</rd:DataSourceID>
     </DataSource>
@@ -1231,17 +1235,25 @@
       <Query>
         <DataSourceName>CREDITSOFT</DataSourceName>
         <QueryParameters>
+          <QueryParameter Name="@NoLock">
+            <Value>=Parameters!NoLock.Value</Value>
+          </QueryParameter>
           <QueryParameter Name="@ClientID">
             <Value>=Parameters!ClientID.Value</Value>
           </QueryParameter>
         </QueryParameters>
-        <CommandText>SELECT DebitDate FROM dbo.GetACHScheduleDebits(@ClientID, 'Client', null, 1)</CommandText>
+        <CommandText>if @NoLock = 1
+					begin
+					set transaction isolation level read uncommitted
+					end
+
+					SELECT dbo.Custom_ClientNextPaymentDue(@ClientID) AS PaymentDueDate</CommandText>
         <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
       </Query>
       <Fields>
-        <Field Name="DebitDate">
-          <DataField>DebitDate</DataField>
-          <rd:TypeName>System.DateTime</rd:TypeName>
+        <Field Name="datedue">
+          <DataField>PaymentDueDate</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
         </Field>
       </Fields>
     </DataSet>

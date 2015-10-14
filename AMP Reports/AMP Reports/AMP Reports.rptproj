@@ -62,6 +62,10 @@
       <FullPath>Client StatementsByID.rdl</FullPath>
     </ProjectItem>
     <ProjectItem>
+      <Name>ClientStatements New.rdl</Name>
+      <FullPath>ClientStatements New.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
       <Name>CompanySummary by Location.rdl</Name>
       <FullPath>CompanySummary by Location.rdl</FullPath>
     </ProjectItem>
@@ -78,6 +82,22 @@
       <FullPath>ConvertedLeadsByDateRange.rdl</FullPath>
     </ProjectItem>
     <ProjectItem>
+      <Name>CSDATA8 Monthly Settlement Report.rdl</Name>
+      <FullPath>CSDATA8 Monthly Settlement Report.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>CSDATA8 Settlement Fees By Location.rdl</Name>
+      <FullPath>CSDATA8 Settlement Fees By Location.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>CSDATA8_INC Monthly Settlement Report.rdl</Name>
+      <FullPath>CSDATA8_INC Monthly Settlement Report.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>CSDATA8_INC Settlement Fees By Location.rdl</Name>
+      <FullPath>CSDATA8_INC Settlement Fees By Location.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
       <Name>CSDATA8_INCSettlement Fees By Location.rdl</Name>
       <FullPath>CSDATA8_INCSettlement Fees By Location.rdl</FullPath>
     </ProjectItem>
@@ -92,6 +112,10 @@
     <ProjectItem>
       <Name>Custom_RefundCoverLetterByCheckRun (1).rdl</Name>
       <FullPath>Custom_RefundCoverLetterByCheckRun (1).rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Estimated Settlement Projections.rdl</Name>
+      <FullPath>Estimated Settlement Projections.rdl</FullPath>
     </ProjectItem>
     <ProjectItem>
       <Name>Lead Analysis.rdl</Name>
@@ -122,8 +146,8 @@
       <FullPath>RetentionRateDetailByMonth.rdl</FullPath>
     </ProjectItem>
     <ProjectItem>
-      <Name>Estimated Settlement Projections.rdl</Name>
-      <FullPath>Estimated Settlement Projections.rdl</FullPath>
+      <Name>Refund Cover Letter By CheckRun.rdl</Name>
+      <FullPath>Refund Cover Letter By CheckRun.rdl</FullPath>
     </ProjectItem>
   </Reports>
   <Configurations>
