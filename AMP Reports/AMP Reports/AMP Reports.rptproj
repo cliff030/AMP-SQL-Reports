@@ -14,6 +14,10 @@
       <Name>CSDATA8_INC.rds</Name>
       <FullPath>CSDATA8_INC.rds</FullPath>
     </ProjectItem>
+    <ProjectItem>
+      <Name>CSDATA8_KAR.rds</Name>
+      <FullPath>CSDATA8_KAR.rds</FullPath>
+    </ProjectItem>
   </DataSources>
   <DataSets />
   <Reports>
@@ -142,12 +146,16 @@
       <FullPath>Refund Checks.rdl</FullPath>
     </ProjectItem>
     <ProjectItem>
+      <Name>Refund Cover Letter By CheckRun.rdl</Name>
+      <FullPath>Refund Cover Letter By CheckRun.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
       <Name>RetentionRateDetailByMonth.rdl</Name>
       <FullPath>RetentionRateDetailByMonth.rdl</FullPath>
     </ProjectItem>
     <ProjectItem>
-      <Name>Refund Cover Letter By CheckRun.rdl</Name>
-      <FullPath>Refund Cover Letter By CheckRun.rdl</FullPath>
+      <Name>CSDATA8_INC Settlement Fee By Location By Date.rdl</Name>
+      <FullPath>CSDATA8_INC Settlement Fee By Location By Date.rdl</FullPath>
     </ProjectItem>
   </Reports>
   <Configurations>
