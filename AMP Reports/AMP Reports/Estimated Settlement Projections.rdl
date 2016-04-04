@@ -880,7 +880,7 @@
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
     <DataSource Name="CREDITSOFT">
-      <DataSourceReference>CREDITSOFT</DataSourceReference>
+      <DataSourceReference>CSDATA8</DataSourceReference>
       <rd:SecurityType>None</rd:SecurityType>
       <rd:DataSourceID>286e59a4-bf72-4b9b-b5b2-35ca6b356e4d</rd:DataSourceID>
     </DataSource>
