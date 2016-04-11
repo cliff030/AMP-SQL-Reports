@@ -1,103 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Report xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner" xmlns="http://schemas.microsoft.com/sqlserver/reporting/2008/01/reportdefinition">
-  <DataSources>
-    <DataSource Name="CREDITSOFT">
-      <DataSourceReference>CSDATA8</DataSourceReference>
-      <rd:DataSourceID>ac0fc108-f322-4825-b2c6-ca2a9721a0e1</rd:DataSourceID>
-      <rd:SecurityType>None</rd:SecurityType>
-    </DataSource>
-  </DataSources>
-  <DataSets>
-    <DataSet Name="NSFPercentagesByCat">
-      <Fields>
-        <Field Name="NSFCount">
-          <DataField>NSFCount</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="NSFPercentage">
-          <DataField>NSFPercentage</DataField>
-          <rd:TypeName>System.Double</rd:TypeName>
-        </Field>
-        <Field Name="NSFReason">
-          <DataField>NSFReason</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-      </Fields>
-      <Query>
-        <DataSourceName>CREDITSOFT</DataSourceName>
-        <CommandType>StoredProcedure</CommandType>
-        <CommandText>Custom_NSFPercentagesByCategroy</CommandText>
-        <QueryParameters>
-          <QueryParameter Name="@StartDate">
-            <Value>=Parameters!StartDate.Value</Value>
-          </QueryParameter>
-          <QueryParameter Name="@EndDate">
-            <Value>=Parameters!EndDate.Value</Value>
-          </QueryParameter>
-        </QueryParameters>
-        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
-      </Query>
-    </DataSet>
-    <DataSet Name="DB_NAME">
-      <Fields>
-        <Field Name="ID">
-          <DataField />
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-      </Fields>
-      <Query>
-        <DataSourceName>CREDITSOFT</DataSourceName>
-        <CommandText>SELECT DB_NAME()</CommandText>
-        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
-      </Query>
-    </DataSet>
-    <DataSet Name="NSFPercentages">
-      <Fields>
-        <Field Name="TotalTransactions">
-          <DataField>TotalTransactions</DataField>
-          <rd:TypeName>System.Double</rd:TypeName>
-        </Field>
-        <Field Name="TotalReturn">
-          <DataField>TotalReturn</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="PercentReturn">
-          <DataField>PercentReturn</DataField>
-          <rd:TypeName>System.Double</rd:TypeName>
-        </Field>
-        <Field Name="TotalHardReturn">
-          <DataField>TotalHardReturn</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="PercentHardReturn">
-          <DataField>PercentHardReturn</DataField>
-          <rd:TypeName>System.Double</rd:TypeName>
-        </Field>
-        <Field Name="TotalSoftReturn">
-          <DataField>TotalSoftReturn</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="PercentSoftReturn">
-          <DataField>PercentSoftReturn</DataField>
-          <rd:TypeName>System.Double</rd:TypeName>
-        </Field>
-      </Fields>
-      <Query>
-        <DataSourceName>CREDITSOFT</DataSourceName>
-        <CommandType>StoredProcedure</CommandType>
-        <CommandText>Custom_NSFPercentage</CommandText>
-        <QueryParameters>
-          <QueryParameter Name="@StartDate">
-            <Value>=Parameters!StartDate.Value</Value>
-          </QueryParameter>
-          <QueryParameter Name="@EndDate">
-            <Value>=Parameters!EndDate.Value</Value>
-          </QueryParameter>
-        </QueryParameters>
-        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
-      </Query>
-    </DataSet>
-  </DataSets>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2008/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
   <Body>
     <ReportItems>
       <Chart Name="NSFCategories">
@@ -198,6 +100,9 @@
                 <CrossAt>NaN</CrossAt>
                 <Minimum>NaN</Minimum>
                 <Maximum>NaN</Maximum>
+                <ChartAxisScaleBreak>
+                  <Style />
+                </ChartAxisScaleBreak>
               </ChartAxis>
               <ChartAxis Name="Secondary">
                 <Style>
@@ -232,6 +137,9 @@
                 <Location>Opposite</Location>
                 <Minimum>NaN</Minimum>
                 <Maximum>NaN</Maximum>
+                <ChartAxisScaleBreak>
+                  <Style />
+                </ChartAxisScaleBreak>
               </ChartAxis>
             </ChartCategoryAxes>
             <ChartValueAxes>
@@ -266,6 +174,9 @@
                 <CrossAt>NaN</CrossAt>
                 <Minimum>NaN</Minimum>
                 <Maximum>NaN</Maximum>
+                <ChartAxisScaleBreak>
+                  <Style />
+                </ChartAxisScaleBreak>
               </ChartAxis>
               <ChartAxis Name="Secondary">
                 <Style>
@@ -299,6 +210,9 @@
                 <Location>Opposite</Location>
                 <Minimum>NaN</Minimum>
                 <Maximum>NaN</Maximum>
+                <ChartAxisScaleBreak>
+                  <Style />
+                </ChartAxisScaleBreak>
               </ChartAxis>
             </ChartValueAxes>
             <Style>
@@ -352,7 +266,7 @@
             <VerticalAlign>Top</VerticalAlign>
           </Style>
         </ChartNoDataMessage>
-        <DataSetName>NSFPercentagesByCat</DataSetName>
+        <DataSetName>NSFPercentagesByCatAndLoc</DataSetName>
         <Height>9.23958in</Height>
         <Width>6.97917in</Width>
         <Style>
@@ -596,7 +510,7 @@
             </TablixMember>
           </TablixMembers>
         </TablixRowHierarchy>
-        <DataSetName>NSFPercentages</DataSetName>
+        <DataSetName>NSFPercentagesByLocation</DataSetName>
         <Top>0.75708in</Top>
         <Left>0.21541in</Left>
         <Height>0.52083in</Height>
@@ -616,6 +530,113 @@
       </Border>
     </Style>
   </Body>
+  <Width>6.97917in</Width>
+  <Page>
+    <LeftMargin>0.5in</LeftMargin>
+    <RightMargin>0.5in</RightMargin>
+    <TopMargin>0.5in</TopMargin>
+    <BottomMargin>0.5in</BottomMargin>
+    <Style />
+  </Page>
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="CREDITSOFT">
+      <DataSourceReference>CSDATA8</DataSourceReference>
+      <rd:SecurityType>None</rd:SecurityType>
+      <rd:DataSourceID>ac0fc108-f322-4825-b2c6-ca2a9721a0e1</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <DataSets>
+    <DataSet Name="NSFPercentagesByCatAndLoc">
+      <Query>
+        <DataSourceName>CREDITSOFT</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="@StartDate">
+            <Value>=Parameters!StartDate.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@EndDate">
+            <Value>=Parameters!EndDate.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <CommandType>StoredProcedure</CommandType>
+        <CommandText>Custom_NSFPercentagesByCategoryAndLocation</CommandText>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+      </Query>
+      <Fields>
+        <Field Name="NSFCount">
+          <DataField>NSFCount</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="NSFPercentage">
+          <DataField>NSFPercentage</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="NSFReason">
+          <DataField>NSFReason</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="DB_NAME">
+      <Query>
+        <DataSourceName>CREDITSOFT</DataSourceName>
+        <CommandText>SELECT DB_NAME()</CommandText>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+      </Query>
+      <Fields>
+        <Field Name="ID">
+          <DataField />
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="NSFPercentagesByLocation">
+      <Query>
+        <DataSourceName>CREDITSOFT</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="@StartDate">
+            <Value>=Parameters!StartDate.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@EndDate">
+            <Value>=Parameters!EndDate.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <CommandType>StoredProcedure</CommandType>
+        <CommandText>Custom_NSFPercentageByLocation</CommandText>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+      </Query>
+      <Fields>
+        <Field Name="TotalTransactions">
+          <DataField>TotalTransactions</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="TotalReturn">
+          <DataField>TotalReturn</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="PercentReturn">
+          <DataField>PercentReturn</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="TotalHardReturn">
+          <DataField>TotalHardReturn</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="PercentHardReturn">
+          <DataField>PercentHardReturn</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="TotalSoftReturn">
+          <DataField>TotalSoftReturn</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="PercentSoftReturn">
+          <DataField>PercentSoftReturn</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+  </DataSets>
   <ReportParameters>
     <ReportParameter Name="StartDate">
       <DataType>DateTime</DataType>
@@ -625,15 +646,11 @@
       <DataType>DateTime</DataType>
       <Prompt>End Date</Prompt>
     </ReportParameter>
+    <ReportParameter Name="Location">
+      <DataType>Integer</DataType>
+      <Prompt>Location</Prompt>
+    </ReportParameter>
   </ReportParameters>
-  <Width>6.97917in</Width>
-  <Page>
-    <LeftMargin>0.5in</LeftMargin>
-    <RightMargin>0.5in</RightMargin>
-    <TopMargin>0.5in</TopMargin>
-    <BottomMargin>0.5in</BottomMargin>
-    <Style />
-  </Page>
-  <rd:ReportID>93d43aa5-d31b-4d57-8bbf-ec7b3f74acc3</rd:ReportID>
   <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>93d43aa5-d31b-4d57-8bbf-ec7b3f74acc3</rd:ReportID>
 </Report>
