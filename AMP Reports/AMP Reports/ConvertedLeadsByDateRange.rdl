@@ -1,85 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Report xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner" xmlns="http://schemas.microsoft.com/sqlserver/reporting/2008/01/reportdefinition">
-  <Description>8.0.167</Description>
-  <DataSources>
-    <DataSource Name="CREDITSOFT">
-      <DataSourceReference>CSDATA8</DataSourceReference>
-      <rd:DataSourceID>4c2ad016-010c-4b70-a8c6-9111fad75062</rd:DataSourceID>
-      <rd:SecurityType>None</rd:SecurityType>
-    </DataSource>
-  </DataSources>
-  <DataSets>
-    <DataSet Name="DataSet1">
-      <Fields>
-        <Field Name="clientid">
-          <DataField>clientid</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="wholename">
-          <DataField>wholename</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="counselor">
-          <DataField>counselor</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="locationname">
-          <DataField>locationname</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="newclientid">
-          <DataField>newclientid</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="exporteddate">
-          <DataField>exporteddate</DataField>
-          <rd:TypeName>System.DateTime</rd:TypeName>
-        </Field>
-      </Fields>
-      <Query>
-        <DataSourceName>CREDITSOFT</DataSourceName>
-        <CommandText>if @NoLock = 1
-begin
-	set transaction isolation level read uncommitted
-end
-
-declare @StartOfDayStartDate datetime
-set @StartOfDayStartDate = dbo.StartofDay(@StartDate)
-declare @StartOfNextDayEndDate datetime
-set @StartOfNextDayEndDate = dbo.StartOfNextDay(@EndDate)
-
-select lc.clientid, lc.wholename,isnull(eu.fullname,'No Counselor') as counselor,isnull( l.locationname, 'No Location') as locationname, c.clientid as newclientid, lc.exporteddate
-from leadclient lc 
-	left join clients c on lc.clientid = c.leadclientid
-	left join locations l on lc.locationid = l.locationid
-	left join ezy_users eu on lc.counselor = eu.userid
-where 	lc.exported = 1
-	and (@Counselor is null or lc.counselor = @Counselor)
-	and (@LocationID is null or lc.locationid = @LocationID)
-	and lc.exporteddate &gt;= @StartOfDayStartDate
-	and lc.exporteddate &lt; @StartOfNextDayEndDate
-order by lc.wholename</CommandText>
-        <QueryParameters>
-          <QueryParameter Name="@Counselor">
-            <Value>=Parameters!Counselor.Value</Value>
-          </QueryParameter>
-          <QueryParameter Name="@LocationID">
-            <Value>=Parameters!LocationID.Value</Value>
-          </QueryParameter>
-          <QueryParameter Name="@StartDate">
-            <Value>=Parameters!StartDate.Value</Value>
-          </QueryParameter>
-          <QueryParameter Name="@EndDate">
-            <Value>=Parameters!EndDate.Value</Value>
-          </QueryParameter>
-          <QueryParameter Name="@NoLock">
-            <Value>=Parameters!NoLock.Value</Value>
-          </QueryParameter>
-        </QueryParameters>
-        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
-      </Query>
-    </DataSet>
-  </DataSets>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2008/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
   <Body>
     <ReportItems>
       <Textbox Name="textbox1">
@@ -767,46 +687,6 @@ order by lc.wholename</CommandText>
     <Height>2.25in</Height>
     <Style />
   </Body>
-  <ReportParameters>
-    <ReportParameter Name="Counselor">
-      <DataType>String</DataType>
-      <Nullable>true</Nullable>
-      <DefaultValue>
-        <Values>
-          <Value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true" />
-        </Values>
-      </DefaultValue>
-      <Prompt>Counselor</Prompt>
-    </ReportParameter>
-    <ReportParameter Name="LocationID">
-      <DataType>Integer</DataType>
-      <Nullable>true</Nullable>
-      <DefaultValue>
-        <Values>
-          <Value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true" />
-        </Values>
-      </DefaultValue>
-      <Prompt>LocationID</Prompt>
-    </ReportParameter>
-    <ReportParameter Name="StartDate">
-      <DataType>DateTime</DataType>
-      <Prompt>StartDate</Prompt>
-    </ReportParameter>
-    <ReportParameter Name="EndDate">
-      <DataType>DateTime</DataType>
-      <Prompt>EndDate</Prompt>
-    </ReportParameter>
-    <ReportParameter Name="NoLock">
-      <DataType>Boolean</DataType>
-      <DefaultValue>
-        <Values>
-          <Value>False</Value>
-        </Values>
-      </DefaultValue>
-      <AllowBlank>true</AllowBlank>
-      <Prompt>NoLock</Prompt>
-    </ReportParameter>
-  </ReportParameters>
   <Width>6.5in</Width>
   <Page>
     <PageFooter>
@@ -883,8 +763,129 @@ order by lc.wholename</CommandText>
     <BottomMargin>1in</BottomMargin>
     <Style />
   </Page>
+  <Description>8.0.167</Description>
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="CREDITSOFT">
+      <DataSourceReference>CSDATA8</DataSourceReference>
+      <rd:SecurityType>None</rd:SecurityType>
+      <rd:DataSourceID>4c2ad016-010c-4b70-a8c6-9111fad75062</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <DataSets>
+    <DataSet Name="DataSet1">
+      <Query>
+        <DataSourceName>CREDITSOFT</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="@Counselor">
+            <Value>=Parameters!Counselor.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@LocationID">
+            <Value>=Parameters!LocationID.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@StartDate">
+            <Value>=Parameters!StartDate.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@EndDate">
+            <Value>=Parameters!EndDate.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@NoLock">
+            <Value>=Parameters!NoLock.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <CommandText>if @NoLock = 1
+begin
+	set transaction isolation level read uncommitted
+end
+
+declare @StartOfDayStartDate datetime
+set @StartOfDayStartDate = dbo.StartofDay(@StartDate)
+declare @StartOfNextDayEndDate datetime
+set @StartOfNextDayEndDate = dbo.StartOfNextDay(@EndDate)
+
+select lc.clientid, lc.wholename,isnull(eu.fullname,'No Counselor') as counselor,isnull( l.locationname, 'No Location') as locationname, c.clientid as newclientid, lc.exporteddate
+from leadclient lc 
+	left join clients c on lc.clientid = c.leadclientid
+	left join locations l on lc.locationid = l.locationid
+	left join ezy_users eu on lc.counselor = eu.userid
+where 	lc.exported = 1
+	and (@Counselor is null or lc.counselor = @Counselor)
+	and (@LocationID is null or lc.locationid = @LocationID)
+	and lc.exporteddate &gt;= @StartOfDayStartDate
+	and lc.exporteddate &lt; @StartOfNextDayEndDate
+order by lc.wholename</CommandText>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+      </Query>
+      <Fields>
+        <Field Name="clientid">
+          <DataField>clientid</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="wholename">
+          <DataField>wholename</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="counselor">
+          <DataField>counselor</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="locationname">
+          <DataField>locationname</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="newclientid">
+          <DataField>newclientid</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="exporteddate">
+          <DataField>exporteddate</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+  </DataSets>
+  <ReportParameters>
+    <ReportParameter Name="Counselor">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <DefaultValue>
+        <Values>
+          <Value xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+        </Values>
+      </DefaultValue>
+      <Prompt>Counselor</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="LocationID">
+      <DataType>Integer</DataType>
+      <Nullable>true</Nullable>
+      <DefaultValue>
+        <Values>
+          <Value xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+        </Values>
+      </DefaultValue>
+      <Prompt>LocationID</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="StartDate">
+      <DataType>DateTime</DataType>
+      <Prompt>StartDate</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="EndDate">
+      <DataType>DateTime</DataType>
+      <Prompt>EndDate</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="NoLock">
+      <DataType>Boolean</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>False</Value>
+        </Values>
+      </DefaultValue>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>NoLock</Prompt>
+    </ReportParameter>
+  </ReportParameters>
   <Language>en-US</Language>
   <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
-  <rd:ReportID>1dcadb64-1a44-433f-868d-a1ebf61cbfcb</rd:ReportID>
   <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>1dcadb64-1a44-433f-868d-a1ebf61cbfcb</rd:ReportID>
 </Report>

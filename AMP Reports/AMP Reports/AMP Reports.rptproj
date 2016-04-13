@@ -58,6 +58,10 @@
       <FullPath>Client Statements - Fee Increase.rdl</FullPath>
     </ProjectItem>
     <ProjectItem>
+      <Name>Client Statements - Office Move.rdl</Name>
+      <FullPath>Client Statements - Office Move.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
       <Name>Client Statements by Date.rdl</Name>
       <FullPath>Client Statements by Date.rdl</FullPath>
     </ProjectItem>
@@ -158,8 +162,8 @@
       <FullPath>RetentionRateDetailByMonth.rdl</FullPath>
     </ProjectItem>
     <ProjectItem>
-      <Name>Client Statements - Office Move.rdl</Name>
-      <FullPath>Client Statements - Office Move.rdl</FullPath>
+      <Name>Converted Leads By DateRange Summary.rdl</Name>
+      <FullPath>Converted Leads By DateRange Summary.rdl</FullPath>
     </ProjectItem>
   </Reports>
   <Configurations>
