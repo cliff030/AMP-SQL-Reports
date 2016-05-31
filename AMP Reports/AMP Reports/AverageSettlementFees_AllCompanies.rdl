@@ -1,0 +1,478 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2008/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <Body>
+    <ReportItems>
+      <Subreport Name="Liberty_Key">
+        <ReportName>Average Settlement Fees</ReportName>
+        <Parameters>
+          <Parameter Name="LocationID">
+            <Value>11</Value>
+          </Parameter>
+          <Parameter Name="StartDate">
+            <Value>=Parameters!StartDate.Value</Value>
+          </Parameter>
+          <Parameter Name="EndDate">
+            <Value>=Parameters!EndDate.Value</Value>
+          </Parameter>
+        </Parameters>
+        <Top>3.26563in</Top>
+        <Left>0.17709in</Left>
+        <Height>1.80208in</Height>
+        <Width>2.48958in</Width>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Subreport>
+      <Subreport Name="FFN">
+        <ReportName>Average Settlement Fees</ReportName>
+        <Parameters>
+          <Parameter Name="LocationID">
+            <Value>10</Value>
+          </Parameter>
+          <Parameter Name="StartDate">
+            <Value>=Parameters!StartDate.Value</Value>
+          </Parameter>
+          <Parameter Name="EndDate">
+            <Value>=Parameters!EndDate.Value</Value>
+          </Parameter>
+        </Parameters>
+        <Top>3.26563in</Top>
+        <Left>2.9075in</Left>
+        <Height>1.80208in</Height>
+        <Width>2.48958in</Width>
+        <ZIndex>1</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Subreport>
+      <Subreport Name="KarmaDirect">
+        <ReportName>Average Settlement Fees</ReportName>
+        <Parameters>
+          <Parameter Name="LocationID">
+            <Value>12</Value>
+          </Parameter>
+          <Parameter Name="StartDate">
+            <Value>=Parameters!StartDate.Value</Value>
+          </Parameter>
+          <Parameter Name="EndDate">
+            <Value>=Parameters!EndDate.Value</Value>
+          </Parameter>
+        </Parameters>
+        <Top>3.26563in</Top>
+        <Left>5.57354in</Left>
+        <Height>1.80208in</Height>
+        <Width>2.48958in</Width>
+        <ZIndex>2</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Subreport>
+      <Textbox Name="Textbox1">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Consumer First Financial: CSDATA8</Value>
+                <Style>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox1</rd:DefaultName>
+        <Top>0.125in</Top>
+        <Left>0.08396in</Left>
+        <Height>0.25in</Height>
+        <Width>9.40625in</Width>
+        <ZIndex>3</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <BackgroundColor>LightGrey</BackgroundColor>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Subreport Name="GCS">
+        <ReportName>Average Settlement Fees</ReportName>
+        <Parameters>
+          <Parameter Name="LocationID">
+            <Value>1</Value>
+          </Parameter>
+          <Parameter Name="StartDate">
+            <Value>=Parameters!StartDate.Value</Value>
+          </Parameter>
+          <Parameter Name="EndDate">
+            <Value>=Parameters!EndDate.Value</Value>
+          </Parameter>
+        </Parameters>
+        <Top>0.48698in</Top>
+        <Left>0.09438in</Left>
+        <Height>1.625in</Height>
+        <Width>1.96875in</Width>
+        <ZIndex>4</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Subreport>
+      <Subreport Name="Roosevelt">
+        <ReportName>Average Settlement Fees</ReportName>
+        <Parameters>
+          <Parameter Name="LocationID">
+            <Value>5</Value>
+          </Parameter>
+          <Parameter Name="StartDate">
+            <Value>=Parameters!StartDate.Value</Value>
+          </Parameter>
+          <Parameter Name="EndDate">
+            <Value>=Parameters!EndDate.Value</Value>
+          </Parameter>
+        </Parameters>
+        <Top>0.48698in</Top>
+        <Left>2.06958in</Left>
+        <Height>1.625in</Height>
+        <Width>1.98958in</Width>
+        <ZIndex>5</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Subreport>
+      <Subreport Name="Sunset">
+        <ReportName>Average Settlement Fees</ReportName>
+        <Parameters>
+          <Parameter Name="LocationID">
+            <Value>7</Value>
+          </Parameter>
+          <Parameter Name="StartDate">
+            <Value>=Parameters!StartDate.Value</Value>
+          </Parameter>
+          <Parameter Name="EndDate">
+            <Value>=Parameters!EndDate.Value</Value>
+          </Parameter>
+        </Parameters>
+        <Top>0.48698in</Top>
+        <Left>4.10083in</Left>
+        <Height>1.625in</Height>
+        <Width>2.08333in</Width>
+        <ZIndex>6</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Subreport>
+      <Subreport Name="MainStreet">
+        <ReportName>Average Settlement Fees</ReportName>
+        <Parameters>
+          <Parameter Name="LocationID">
+            <Value>8</Value>
+          </Parameter>
+          <Parameter Name="StartDate">
+            <Value>=Parameters!StartDate.Value</Value>
+          </Parameter>
+          <Parameter Name="EndDate">
+            <Value>=Parameters!EndDate.Value</Value>
+          </Parameter>
+        </Parameters>
+        <Top>0.48698in</Top>
+        <Left>6.21194in</Left>
+        <Height>1.625in</Height>
+        <Width>2.04166in</Width>
+        <ZIndex>7</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Subreport>
+      <Textbox Name="Textbox3">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>CSDATA8_INC</Value>
+                <Style>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox3</rd:DefaultName>
+        <Top>2.95708in</Top>
+        <Left>0.87375in</Left>
+        <Height>0.25in</Height>
+        <Width>1.10417in</Width>
+        <ZIndex>8</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <BackgroundColor>LightGrey</BackgroundColor>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox4">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>CSDATA8_FFN</Value>
+                <Style>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox3</rd:DefaultName>
+        <Top>2.97656in</Top>
+        <Left>3.58916in</Left>
+        <Height>0.25in</Height>
+        <Width>1.125in</Width>
+        <ZIndex>9</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <BackgroundColor>LightGrey</BackgroundColor>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox5">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>CSDATA8_KAR</Value>
+                <Style>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox3</rd:DefaultName>
+        <Top>2.97656in</Top>
+        <Left>5.96416in</Left>
+        <Height>0.25in</Height>
+        <Width>1.13542in</Width>
+        <ZIndex>10</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <BackgroundColor>LightGrey</BackgroundColor>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox6">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>="Averages of GCS and Roosevelt Combined:      " &amp; First(Fields!Avg_Net_Fees.Value, "Average_GCS_Roosevelt")</Value>
+                <Style>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox6</rd:DefaultName>
+        <Top>2.18625in</Top>
+        <Left>0.21938in</Left>
+        <Height>0.25in</Height>
+        <Width>4.61978in</Width>
+        <ZIndex>11</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <BackgroundColor>LightGrey</BackgroundColor>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox7">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>="Averages of Combined CSDATA8:                      " &amp; First(Fields!Avg_Net_Fees.Value, "Average_Combined_CSDATA8")</Value>
+                <Style>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox6</rd:DefaultName>
+        <Top>2.47656in</Top>
+        <Left>0.20896in</Left>
+        <Height>0.25in</Height>
+        <Width>4.6302in</Width>
+        <ZIndex>12</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <BackgroundColor>LightGrey</BackgroundColor>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+    </ReportItems>
+    <Height>7.70313in</Height>
+    <Style />
+  </Body>
+  <Width>12.32417in</Width>
+  <Page>
+    <PageHeight>8.5in</PageHeight>
+    <PageWidth>11in</PageWidth>
+    <Style />
+  </Page>
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="CSDATA8">
+      <DataSourceReference>CSDATA8</DataSourceReference>
+      <rd:SecurityType>None</rd:SecurityType>
+      <rd:DataSourceID>7967dce8-7862-455f-bdf3-e725ff015805</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <DataSets>
+    <DataSet Name="Average_GCS_Roosevelt">
+      <Query>
+        <DataSourceName>CSDATA8</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="@StartDate">
+            <Value>=Parameters!StartDate.Value</Value>
+            <rd:UserDefined>true</rd:UserDefined>
+          </QueryParameter>
+          <QueryParameter Name="@EndDate">
+            <Value>=Parameters!EndDate.Value</Value>
+            <rd:UserDefined>true</rd:UserDefined>
+          </QueryParameter>
+        </QueryParameters>
+        <CommandText>SELECT '$' + CONVERT(varchar(12),(SUM(P.Amount) / COUNT(DISTINCT(DATENAME(MONTH,CKS.DateCreated)))), 1) AS [Avg_Net_Fees]
+		FROM CSDATA8.dbo.Checks CKS
+		INNER JOIN CSDATA8.dbo.Payments P ON CKS.CheckID = P.CheckID AND CKS.BankAccountID = P.BankAccountID
+	INNER JOIN CSDATA8.dbo.Clients C ON C.ClientID = P.ClientID
+		LEFT JOIN  CSDATA8.dbo.Creditors CRED on CKS.CreditorID = CRED.CreditorID
+	INNER JOIN CSDATA8.dbo.Locations LOC on C.LocationID = LOC.LocationID
+		WHERE CKS.DateCreated &gt;=  @StartDate  
+		AND CKS.DateCreated &lt;  @EndDate AND CRED.CreditorID = 4 AND (C.LocationID = 1 OR C.LocationID = 5)
+	</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="Avg_Net_Fees">
+          <DataField>Avg_Net_Fees</DataField>
+          <rd:UserDefined>true</rd:UserDefined>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="Average_Combined_CSDATA8">
+      <Query>
+        <DataSourceName>CSDATA8</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="@StartDate">
+            <Value>=Parameters!StartDate.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@EndDate">
+            <Value>=Parameters!EndDate.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <CommandText>SELECT '$' + CONVERT(varchar(12),(SUM(P.Amount) / COUNT(DISTINCT(DATENAME(MONTH,CKS.DateCreated)))), 1) AS [Avg_Net_Fees]
+		FROM CSDATA8.dbo.Checks CKS
+		INNER JOIN CSDATA8.dbo.Payments P ON CKS.CheckID = P.CheckID AND CKS.BankAccountID = P.BankAccountID
+	INNER JOIN CSDATA8.dbo.Clients C ON C.ClientID = P.ClientID
+		LEFT JOIN  CSDATA8.dbo.Creditors CRED on CKS.CreditorID = CRED.CreditorID
+	INNER JOIN CSDATA8.dbo.Locations LOC on C.LocationID = LOC.LocationID
+		WHERE CKS.DateCreated &gt;=  @StartDate  
+		AND CKS.DateCreated &lt;  @EndDate AND CRED.CreditorID = 4 AND (C.LocationID = 1 OR C.LocationID = 5 OR C.LocationID = 7 OR C.LocationID = 8)
+	</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="Avg_Net_Fees">
+          <DataField>Avg_Net_Fees</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+  </DataSets>
+  <ReportParameters>
+    <ReportParameter Name="StartDate">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>01/01/2016</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Start Date</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="EndDate">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>12/31/2016</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>End Date</Prompt>
+    </ReportParameter>
+  </ReportParameters>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>83a6bfae-31e9-4865-9983-ffa6319622a8</rd:ReportID>
+</Report>

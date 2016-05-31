@@ -1,0 +1,439 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2008/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <Body>
+    <ReportItems>
+      <Textbox Name="Textbox1">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=Switch(Parameters!LocationID.Value = 1, "Avg Settlement Fees: GCS", Parameters!LocationID.Value = 5, "Avg Settlement Fees: Roosevelt", Parameters!LocationID.Value = 7, "Avg Settlement Fees: Sunset Point", Parameters!LocationID.Value = 8, "Avg Settlement Fees: Main Street", Parameters!LocationID.Value = 10, "Avg Settlement Fees: FFN", Parameters!LocationID.Value = 11, "Avg Settlement Fees: Liberty/Key", Parameters!LocationID.Value = 13, "Avg Settlement Fees: Liberty/Key", Parameters!LocationID.Value = 12, "Avg Settlement Fees: Karma Direct")</Value>
+                <Style>
+                  <FontSize>9pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox1</rd:DefaultName>
+        <Top>0.155in</Top>
+        <Left>0.11333in</Left>
+        <Height>0.25in</Height>
+        <Width>2.28125in</Width>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <BackgroundColor>LightGrey</BackgroundColor>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Tablix Name="Tablix1">
+        <TablixBody>
+          <TablixColumns>
+            <TablixColumn>
+              <Width>0.79166in</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>1.25in</Width>
+            </TablixColumn>
+          </TablixColumns>
+          <TablixRows>
+            <TablixRow>
+              <Height>0.22917in</Height>
+              <TablixCells>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox2">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>Month</Value>
+                              <Style>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox2</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <BackgroundColor>LightGrey</BackgroundColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox4">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>Net Fees</Value>
+                              <Style>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox4</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <BackgroundColor>LightGrey</BackgroundColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+              </TablixCells>
+            </TablixRow>
+            <TablixRow>
+              <Height>0.20833in</Height>
+              <TablixCells>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Month">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!Month.Value</Value>
+                              <Style />
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Month</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Net_Fees">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!Net_Fees.Value</Value>
+                              <Style />
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Net_Fees</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+              </TablixCells>
+            </TablixRow>
+          </TablixRows>
+        </TablixBody>
+        <TablixColumnHierarchy>
+          <TablixMembers>
+            <TablixMember />
+            <TablixMember />
+          </TablixMembers>
+        </TablixColumnHierarchy>
+        <TablixRowHierarchy>
+          <TablixMembers>
+            <TablixMember>
+              <KeepWithGroup>After</KeepWithGroup>
+            </TablixMember>
+            <TablixMember>
+              <Group Name="Details" />
+            </TablixMember>
+          </TablixMembers>
+        </TablixRowHierarchy>
+        <DataSetName>AverageSettlementFees</DataSetName>
+        <Top>0.67583in</Top>
+        <Left>0.24875in</Left>
+        <Height>0.4375in</Height>
+        <Width>2.04166in</Width>
+        <ZIndex>1</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Tablix>
+      <Textbox Name="Textbox13">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>="Average: " &amp; FormatCurrency(Avg(cdbl(Fields!Net_Fees.Value),"AverageSettlementFees"))</Value>
+                <Style>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Right</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox13</rd:DefaultName>
+        <Top>1.38417in</Top>
+        <Left>0.24875in</Left>
+        <Height>0.28125in</Height>
+        <Width>2.14583in</Width>
+        <ZIndex>2</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <BackgroundColor>LightGrey</BackgroundColor>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+    </ReportItems>
+    <Height>1.9375in</Height>
+    <Style />
+  </Body>
+  <Width>2.57291in</Width>
+  <Page>
+    <LeftMargin>1in</LeftMargin>
+    <RightMargin>1in</RightMargin>
+    <TopMargin>1in</TopMargin>
+    <BottomMargin>1in</BottomMargin>
+    <Style />
+  </Page>
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="AllDatabases">
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString>Data Source=amp-dc;Initial Catalog=CSDATABASES</ConnectString>
+        <IntegratedSecurity>true</IntegratedSecurity>
+      </ConnectionProperties>
+      <rd:SecurityType>Integrated</rd:SecurityType>
+      <rd:DataSourceID>be65a9bb-af7a-4b83-8279-1c3033d9ec62</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <DataSets>
+    <DataSet Name="AverageSettlementFees">
+      <Query>
+        <DataSourceName>AllDatabases</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="@LocationID">
+            <Value>=Parameters!LocationID.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@StartDate">
+            <Value>=Parameters!StartDate.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@EndDate">
+            <Value>=Parameters!EndDate.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <CommandText>IF (@LocationID  = 13 or @LocationID = 11)
+	
+	SELECT  DATENAME(MONTH,CKS.DateCreated) AS [Month], '$' + CONVERT(varchar(12),SUM(P.Amount), 1) AS [Net Fees]
+		FROM CSDATA8_INC.dbo.Checks CKS
+		INNER JOIN CSDATA8_INC.dbo.Payments P ON CKS.CheckID = P.CheckID AND CKS.BankAccountID = P.BankAccountID
+	INNER JOIN CSDATA8_INC.dbo.Clients C ON C.ClientID = P.ClientID
+		LEFT JOIN  CSDATA8_INC.dbo.Creditors CRED on CKS.CreditorID = CRED.CreditorID
+	INNER JOIN CSDATA8_INC.dbo.Locations LOC on C.LocationID = LOC.LocationID
+		WHERE CKS.DateCreated &gt;=  @StartDate  
+		AND CKS.DateCreated &lt;  @EndDate AND CRED.CreditorID = 4 
+	GROUP BY MONTH(CKS.DateCreated), DATENAME(MONTH,CKS.DateCreated)
+	ORDER BY MONTH(CKS.DateCreated)
+
+ELSE IF (@LocationID = 10)
+	
+	SELECT DATENAME(MONTH, CKS.DateCreated) AS Month, '$' + CONVERT(varchar(12), SUM(P.Amount), 1) AS [Net Fees] 
+		FROM CSDATA8_FFN.dbo.Checks AS CKS 
+		INNER JOIN CSDATA8_FFN.dbo.Payments AS P ON CKS.CheckID = P.CheckID AND CKS.BankAccountID = P.BankAccountID 
+	INNER JOIN CSDATA8_FFN.dbo.Clients AS C ON C.ClientID = P.ClientID 
+		LEFT OUTER JOIN CSDATA8_FFN.dbo.Creditors AS CRED ON CKS.CreditorID = CRED.CreditorID
+		WHERE (CKS.DateCreated &gt;= @StartDate) AND (CKS.DateCreated &lt; @EndDate) AND (CRED.CreditorID = 11048)
+	GROUP BY MONTH(CKS.DateCreated), DATENAME(MONTH, CKS.DateCreated)
+	ORDER BY MONTH(CKS.DateCreated)
+
+
+ELSE IF (@LocationID = 12)
+	
+	SELECT DATENAME(MONTH, CKS.DateCreated) AS Month, '$' + CONVERT(varchar(12), SUM(P.Amount), 1) AS [Net Fees]
+		FROM CSDATA8_KAR.dbo.Checks AS CKS 
+		INNER JOIN CSDATA8_KAR.dbo.Payments AS P ON CKS.CheckID = P.CheckID AND CKS.BankAccountID = P.BankAccountID 
+		INNER JOIN CSDATA8_KAR.dbo.Clients AS C ON C.ClientID = P.ClientID 
+		LEFT OUTER JOIN CSDATA8_KAR.dbo.Creditors AS CRED ON CKS.CreditorID = CRED.CreditorID
+		WHERE (CKS.DateCreated &gt;= @StartDate) AND (CKS.DateCreated &lt; @EndDate) AND (CRED.CreditorID = 4)
+		GROUP BY MONTH(CKS.DateCreated), DATENAME(MONTH, CKS.DateCreated)
+		ORDER BY MONTH(CKS.DateCreated)
+
+ELSE
+	SELECT LOC.LocationName, DATENAME(MONTH,CKS.DateCreated) AS [Month], '$' + CONVERT(varchar(12),SUM(P.Amount), 1) AS [Net Fees]
+		FROM CSDATA8.dbo.Checks CKS
+		INNER JOIN CSDATA8.dbo.Payments P ON CKS.CheckID = P.CheckID AND CKS.BankAccountID = P.BankAccountID
+	INNER JOIN CSDATA8.dbo.Clients C ON C.ClientID = P.ClientID
+		LEFT JOIN  CSDATA8.dbo.Creditors CRED on CKS.CreditorID = CRED.CreditorID
+	INNER JOIN CSDATA8.dbo.Locations LOC on C.LocationID = LOC.LocationID
+		WHERE CKS.DateCreated &gt;=  @StartDate  
+		AND CKS.DateCreated &lt;  @EndDate AND CRED.CreditorID = 4 AND C.LocationID = @LocationID
+	GROUP BY  LOC.LocationName, MONTH(CKS.DateCreated), DATENAME(MONTH,CKS.DateCreated)
+	ORDER BY MONTH(CKS.DateCreated)</CommandText>
+        <Timeout>10</Timeout>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+      </Query>
+      <Fields>
+        <Field Name="Month">
+          <DataField>Month</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Net_Fees">
+          <DataField>Net Fees</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="Locations">
+      <Query>
+        <DataSourceName>AllDatabases</DataSourceName>
+        <CommandText>SELECT        LocationID, LocationName
+FROM            CSDATA8.dbo.Locations
+ORDER BY LocationID</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="LocationID">
+          <DataField>LocationID</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="LocationName">
+          <DataField>LocationName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="DataSet1">
+      <Query>
+        <DataSourceName>AllDatabases</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="@StartDate">
+            <Value>=Parameters!StartDate.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@EndDate">
+            <Value>=Parameters!EndDate.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <CommandText>SELECT        DATENAME(MONTH, CKS.DateCreated) AS Month, '$' + CONVERT(varchar(12), SUM(P.Amount), 1) AS [Net Fees]
+FROM            CSDATA8_FFN.dbo.Checks AS CKS INNER JOIN
+                         CSDATA8_FFN.dbo.Payments AS P ON CKS.CheckID = P.CheckID AND CKS.BankAccountID = P.BankAccountID INNER JOIN
+                         CSDATA8_FFN.dbo.Clients AS C ON C.ClientID = P.ClientID LEFT OUTER JOIN
+                         CSDATA8_FFN.dbo.Creditors AS CRED ON CKS.CreditorID = CRED.CreditorID
+WHERE        (CKS.DateCreated &gt;= @StartDate) AND (CKS.DateCreated &lt; @EndDate) AND (CRED.CreditorID = 11048)
+GROUP BY MONTH(CKS.DateCreated), DATENAME(MONTH, CKS.DateCreated)
+ORDER BY MONTH(CKS.DateCreated)</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="Month">
+          <DataField>Month</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Net_Fees">
+          <DataField>Net Fees</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+  </DataSets>
+  <ReportParameters>
+    <ReportParameter Name="StartDate">
+      <DataType>DateTime</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>1/1/2016 12:00:00 AM</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Start Date</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="EndDate">
+      <DataType>DateTime</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>=Today</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>End Date</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="LocationID">
+      <DataType>String</DataType>
+      <Prompt>Location ID</Prompt>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>Locations</DataSetName>
+          <ValueField>LocationID</ValueField>
+          <LabelField>LocationName</LabelField>
+        </DataSetReference>
+      </ValidValues>
+    </ReportParameter>
+  </ReportParameters>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>3a6ebf1a-55c8-42bd-af0a-3b567e64b101</rd:ReportID>
+</Report>
