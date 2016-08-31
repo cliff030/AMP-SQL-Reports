@@ -165,6 +165,10 @@
       <Name>RetentionRateDetailByMonth.rdl</Name>
       <FullPath>RetentionRateDetailByMonth.rdl</FullPath>
     </ProjectItem>
+    <ProjectItem>
+      <Name>CSDATA9 Settlement Fees By Location.rdl</Name>
+      <FullPath>CSDATA9 Settlement Fees By Location.rdl</FullPath>
+    </ProjectItem>
   </Reports>
   <Configurations>
     <Configuration>
