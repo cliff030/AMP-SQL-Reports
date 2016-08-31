@@ -358,7 +358,7 @@
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
     <DataSource Name="CREDITSOFT">
-      <DataSourceReference>CSDATA8</DataSourceReference>
+      <DataSourceReference>CSDATA9</DataSourceReference>
       <rd:SecurityType>Integrated</rd:SecurityType>
       <rd:DataSourceID>bbebd0a0-7453-4648-a3f7-4957c3671d4d</rd:DataSourceID>
     </DataSource>
@@ -436,19 +436,8 @@
     <DataSet Name="Header">
       <Query>
         <DataSourceName>CREDITSOFT</DataSourceName>
-        <QueryParameters>
-          <QueryParameter Name="@NoLock">
-            <Value>=Parameters!NoLock.Value</Value>
-          </QueryParameter>
-        </QueryParameters>
-        <CommandText>if @NoLock = 1
-					begin
-					set transaction isolation level read uncommitted
-					end
-
-					SELECT 	CompanyName, Address1, Address2, City, State, Zip, (Select chardata from preferences where preference = 'PayTo') as PayTo,
-					StatementNote3, ClientPhoneNumber, ClientFaxNumber
-					FROM SystemTable</CommandText>
+        <CommandType>StoredProcedure</CommandType>
+        <CommandText>Custom_StatementsHeader</CommandText>
         <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
       </Query>
       <Fields>

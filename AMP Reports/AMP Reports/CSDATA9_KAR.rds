@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RptDataSource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="CSDATA9_KAR">
+  <ConnectionProperties>
+    <Extension>SQL</Extension>
+    <ConnectString>Data Source=amp-dc;Initial Catalog=CSDATA9_KAR</ConnectString>
+  </ConnectionProperties>
+  <DataSourceID>c9e0b4c6-f2b1-4a5f-b780-34db3f63cd1d</DataSourceID>
+</RptDataSource>
