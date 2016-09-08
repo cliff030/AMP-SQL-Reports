@@ -1262,16 +1262,11 @@
       <DataType>Boolean</DataType>
       <DefaultValue>
         <Values>
-          <Value>False</Value>
+          <Value>true</Value>
         </Values>
       </DefaultValue>
-      <AllowBlank>true</AllowBlank>
       <Prompt>NoLock</Prompt>
-    </ReportParameter>
-    <ReportParameter Name="BaseURL">
-      <DataType>String</DataType>
-      <AllowBlank>true</AllowBlank>
-      <Prompt>BaseURL</Prompt>
+      <Hidden>true</Hidden>
     </ReportParameter>
   </ReportParameters>
   <Language>en-US</Language>

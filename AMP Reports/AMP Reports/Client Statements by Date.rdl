@@ -1551,17 +1551,6 @@
       <Prompt>NoLock</Prompt>
       <Hidden>true</Hidden>
     </ReportParameter>
-    <ReportParameter Name="BaseURL">
-      <DataType>String</DataType>
-      <DefaultValue>
-        <Values>
-          <Value />
-        </Values>
-      </DefaultValue>
-      <AllowBlank>true</AllowBlank>
-      <Prompt>BaseURL</Prompt>
-      <Hidden>true</Hidden>
-    </ReportParameter>
     <ReportParameter Name="StartDate">
       <DataType>DateTime</DataType>
       <Prompt>Start Date</Prompt>

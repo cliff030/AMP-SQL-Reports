@@ -491,7 +491,13 @@
     </ReportParameter>
     <ReportParameter Name="NoLock">
       <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>true</Value>
+        </Values>
+      </DefaultValue>
       <Prompt>No Lock</Prompt>
+      <Hidden>true</Hidden>
     </ReportParameter>
   </ReportParameters>
   <Language>en-US</Language>
